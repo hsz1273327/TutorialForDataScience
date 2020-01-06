@@ -1,0 +1,2959 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>复杂数据类型及类型转换 · 数据科学攻略</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="递归查询.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPython","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../../">
+            
+                <a href="../../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../README.md">
+            
+                <span>
+            
+                    
+                    工具链篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../README.md">
+            
+                <span>
+            
+                    
+                    存储工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    使用postgresql做数据存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    功能与特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    特色功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1.1.1.1" data-path="复杂数据类型及类型转换.html">
+            
+                <a href="复杂数据类型及类型转换.html">
+            
+                    
+                    复杂数据类型及类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.2" data-path="递归查询.html">
+            
+                <a href="递归查询.html">
+            
+                    
+                    递归查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.3" data-path="事件监听.html">
+            
+                <a href="事件监听.html">
+            
+                    
+                    事件监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.4" data-path="物化视图.html">
+            
+                <a href="物化视图.html">
+            
+                    
+                    物化视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.5" data-path="表继承.html">
+            
+                <a href="表继承.html">
+            
+                    
+                    表继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.2" data-path="../自定义扩展/README.md">
+            
+                <span>
+            
+                    
+                    自定义扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.2.1" data-path="../自定义扩展/自定义数据类型.html">
+            
+                <a href="../自定义扩展/自定义数据类型.html">
+            
+                    
+                    自定义数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../../使用场景/README.md">
+            
+                <span>
+            
+                    
+                    使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../../计算工具/">
+            
+                <a href="../../../../计算工具/">
+            
+                    
+                    计算工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../../计算工具/符号计算/">
+            
+                <a href="../../../../计算工具/符号计算/">
+            
+                    
+                    符号计算
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../../../计算工具/符号计算/声明符号和内置符号类型.html">
+            
+                <a href="../../../../计算工具/符号计算/声明符号和内置符号类型.html">
+            
+                    
+                    声明符号和内置符号类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="../../../../计算工具/符号计算/符号计算/README.md">
+            
+                <span>
+            
+                    
+                    符号计算
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.2.1" data-path="../../../../计算工具/符号计算/符号计算/表达式操作/表达式操作.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/表达式操作/表达式操作.html">
+            
+                    
+                    表达式操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.2" data-path="../../../../计算工具/符号计算/符号计算/微积分/微积分.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/微积分/微积分.html">
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.3" data-path="../../../../计算工具/符号计算/符号计算/解方程/解方程.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/解方程/解方程.html">
+            
+                    
+                    解方程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.4" data-path="../../../../计算工具/符号计算/符号计算/线性代数/线性代数.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/线性代数/线性代数.html">
+            
+                    
+                    线性代数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.5" data-path="../../../../计算工具/符号计算/符号计算/概率统计/概率统计.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/概率统计/概率统计.html">
+            
+                    
+                    概率统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.6" data-path="../../../../计算工具/符号计算/符号计算/布尔代数/布尔代数.html">
+            
+                <a href="../../../../计算工具/符号计算/符号计算/布尔代数/布尔代数.html">
+            
+                    
+                    布尔代数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3" data-path="../../../../计算工具/符号计算/输出/README.md">
+            
+                <span>
+            
+                    
+                    输出
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.3.1" data-path="../../../../计算工具/符号计算/输出/求值.html">
+            
+                <a href="../../../../计算工具/符号计算/输出/求值.html">
+            
+                    
+                    求值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3.2" data-path="../../../../计算工具/符号计算/输出/更加优雅的输出打印结果/更加优雅的输出打印结果.html">
+            
+                <a href="../../../../计算工具/符号计算/输出/更加优雅的输出打印结果/更加优雅的输出打印结果.html">
+            
+                    
+                    更加优雅的输出打印结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3.3" data-path="../../../../计算工具/符号计算/输出/画图/画图.html">
+            
+                <a href="../../../../计算工具/符号计算/输出/画图/画图.html">
+            
+                    
+                    画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../../计算工具/数值计算/">
+            
+                <a href="../../../../计算工具/数值计算/">
+            
+                    
+                    数值计算
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../../../计算工具/数值计算/使用标准库处理基本数学问题/使用标准库处理基本数学问题.html">
+            
+                <a href="../../../../计算工具/数值计算/使用标准库处理基本数学问题/使用标准库处理基本数学问题.html">
+            
+                    
+                    使用标准库处理基本数学问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/">
+            
+                    
+                    使用numpy_scipy处理复杂的数值计算问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.2.1" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/numpy的高性能同构定长多维数组/numpy的高性能同构定长多维数组.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/numpy的高性能同构定长多维数组/numpy的高性能同构定长多维数组.html">
+            
+                    
+                    numpy的高性能同构定长多维数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.2" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/universal_function/universal_function.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/universal_function/universal_function.html">
+            
+                    
+                    universal_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.3" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/精度与基本数学运算.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/精度与基本数学运算.html">
+            
+                    
+                    精度与基本数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.4" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/多项式计算/多项式计算.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/多项式计算/多项式计算.html">
+            
+                    
+                    多项式计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.5" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/线性代数.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/线性代数.html">
+            
+                    
+                    线性代数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.6" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/统计计算/统计计算.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/统计计算/统计计算.html">
+            
+                    
+                    统计计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.7" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/傅里叶变换/傅里叶变换.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/傅里叶变换/傅里叶变换.html">
+            
+                    
+                    傅里叶变换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.8" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/窗口函数与卷积/窗口函数与卷积.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/窗口函数与卷积/窗口函数与卷积.html">
+            
+                    
+                    窗口函数与卷积
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2.9" data-path="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/财务分析.html">
+            
+                <a href="../../../../计算工具/数值计算/使用numpy_scipy处理复杂的数值计算问题/财务分析.html">
+            
+                    
+                    财务分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/">
+            
+                    
+                    使用pandas处理结构化数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.3.1" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的序列对象.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的序列对象.html">
+            
+                    
+                    pandas的序列对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.2" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的数据框对象.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的数据框对象.html">
+            
+                    
+                    pandas的数据框对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.3" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/复合索引.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/复合索引.html">
+            
+                    
+                    复合索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.4" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/分组与集聚.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/分组与集聚.html">
+            
+                    
+                    分组与集聚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.5" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的函数操作.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/pandas的函数操作.html">
+            
+                    
+                    pandas的函数操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.6" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/基本的统计分析.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/基本的统计分析.html">
+            
+                    
+                    基本的统计分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.7" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/时间序列/时间序列.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/时间序列/时间序列.html">
+            
+                    
+                    时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.8" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/数据获取与保存.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/数据获取与保存.html">
+            
+                    
+                    数据获取与保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.3.9" data-path="../../../../计算工具/数值计算/使用pandas处理结构化数据/数据可视化/数据可视化.html">
+            
+                <a href="../../../../计算工具/数值计算/使用pandas处理结构化数据/数据可视化/数据可视化.html">
+            
+                    
+                    数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4" data-path="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/">
+            
+                <a href="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/">
+            
+                    
+                    使用dask处理大规模数据的数值计算问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.4.1" data-path="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/分布式数据结构.html">
+            
+                <a href="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/分布式数据结构.html">
+            
+                    
+                    分布式数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4.2" data-path="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/dask作为算力池/dask作为算力池.html">
+            
+                <a href="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/dask作为算力池/dask作为算力池.html">
+            
+                    
+                    dask作为算力池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4.3" data-path="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/实时任务提交.html">
+            
+                <a href="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/实时任务提交.html">
+            
+                    
+                    实时任务提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.4.4" data-path="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/流计算/流计算.html">
+            
+                <a href="../../../../计算工具/数值计算/使用dask处理大规模数据的数值计算问题/流计算/流计算.html">
+            
+                    
+                    流计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../../数据可视化工具/">
+            
+                <a href="../../../../数据可视化工具/">
+            
+                    
+                    数据可视化工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/">
+            
+                    
+                    使用matplotlib做数据可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/matplotlib的基本设置/matplotlib的基本设置.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/matplotlib的基本设置/matplotlib的基本设置.html">
+            
+                    
+                    matplotlib的基本设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/绘图工具pyplot/绘图工具pyplot.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/绘图工具pyplot/绘图工具pyplot.html">
+            
+                    
+                    绘图工具pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/非结构网络/非结构网络.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/非结构网络/非结构网络.html">
+            
+                    
+                    非结构网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.4" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/桑基图/桑基图.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/桑基图/桑基图.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.5" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/图片加载/图片加载.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/图片加载/图片加载.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.6" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/保存图片/保存图片.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/保存图片/保存图片.html">
+            
+                    
+                    保存图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.7" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/控件.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/控件.html">
+            
+                    
+                    控件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.8" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/动画/动画.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/动画/动画.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.9" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/matplitlib结合web技术.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/matplitlib结合web技术.html">
+            
+                    
+                    matplitlib结合web技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.10" data-path="../../../../数据可视化工具/使用matplotlib做数据可视化/结语.html">
+            
+                <a href="../../../../数据可视化工具/使用matplotlib做数据可视化/结语.html">
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../../结语.md">
+            
+                <span>
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../../数据管理篇/">
+            
+                <a href="../../../../../数据管理篇/">
+            
+                    
+                    数据管理篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../../../数据管理篇/数据规模与数据管理.html">
+            
+                <a href="../../../../../数据管理篇/数据规模与数据管理.html">
+            
+                    
+                    数据规模与数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../../../数据管理篇/数据的标准化.html">
+            
+                <a href="../../../../../数据管理篇/数据的标准化.html">
+            
+                    
+                    数据的标准化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../../../数据管理篇/数据的生命周期.html">
+            
+                <a href="../../../../../数据管理篇/数据的生命周期.html">
+            
+                    
+                    数据的生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../../../数据管理篇/数据的监控.html">
+            
+                <a href="../../../../../数据管理篇/数据的监控.html">
+            
+                    
+                    数据的监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../../数据采集篇/">
+            
+                <a href="../../../../../数据采集篇/">
+            
+                    
+                    数据采集篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../../../数据采集篇/埋点数据采集.html">
+            
+                <a href="../../../../../数据采集篇/埋点数据采集.html">
+            
+                    
+                    埋点数据采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../../../数据采集篇/日志数据采集.html">
+            
+                <a href="../../../../../数据采集篇/日志数据采集.html">
+            
+                    
+                    日志数据采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../../术语表/">
+            
+                <a href="../../../../../术语表/">
+            
+                    
+                    术语表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../../../术语表/统计/">
+            
+                <a href="../../../../../术语表/统计/">
+            
+                    
+                    统计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../../../术语表/统计/误差.html">
+            
+                <a href="../../../../../术语表/统计/误差.html">
+            
+                    
+                    误差
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../../../术语表/信息论/README.md">
+            
+                <span>
+            
+                    
+                    信息论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../../../术语表/信息论/信息空间.html">
+            
+                <a href="../../../../../术语表/信息论/信息空间.html">
+            
+                    
+                    信息空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../../.." >复杂数据类型及类型转换</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;"><b>1. </b>&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;"><b>1.1. </b>&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6570;"><b>1.1.1. </b>&#x6570;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5B57;&#x7B26;&#x4E32;"><b>1.1.2. </b>&#x5B57;&#x7B26;&#x4E32;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5E03;&#x5C14;&#x503C;"><b>1.1.3. </b>&#x5E03;&#x5C14;&#x503C;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x65F6;&#x95F4;"><b>1.1.4. </b>&#x65F6;&#x95F4;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;"><b>1.2. </b>&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#array"><b>1.2.1. </b>array</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#jsonjsonb"><b>1.3. </b>json/jsonb</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;"><b>1.3.1. </b>json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;"><b>1.3.2. </b>&#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;"><b>1.3.3. </b>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5E8F;&#x5217;"><b>1.3.4. </b>&#x5E8F;&#x5217;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#bitmap"><b>1.3.5. </b>bitmap</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#money"><b>1.3.6. </b>money</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#uuid"><b>1.3.7. </b>uuid</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7F51;&#x7EDC;&#x5730;&#x5740;"><b>1.3.8. </b>&#x7F51;&#x7EDC;&#x5730;&#x5740;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;"><b>1.3.9. </b>&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x51E0;&#x4F55;&#x56FE;&#x5F62;"><b>1.3.10. </b>&#x51E0;&#x4F55;&#x56FE;&#x5F62;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><b>1.4. </b>&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li></ul></ul></div><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<p>PG&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x9700;&#x6C42;,&#x540C;&#x65F6;&#x8FD8;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7C7B;&#x578B;.&#x6240;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x4E00;&#x6837;&#x6CA1;&#x6709;&#x7279;&#x6B8A;.</p>
+<pre><code class="lang-PostgreSQL">-- connection: postgres://postgres:postgres@localhost:5432/test
+</code></pre>
+<pre><code class="lang-PostgreSQL">-- autocommit: true
+</code></pre>
+<pre><code>switched autocommit mode to True
+</code></pre><h2 id="&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
+<p>&#x8FD9;&#x8FB9;&#x7684;&#x5E38;&#x89C4;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6307;&#x6807;&#x51C6;sql&#x8BED;&#x6CD5;&#x4E0B;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x4E3B;&#x8981;&#x5305;&#x542B;:</p>
+<ul>
+<li>&#x6570;</li>
+<li>&#x5B57;&#x7B26;&#x4E32;</li>
+<li>&#x5E03;&#x5C14;&#x503C;</li>
+<li>&#x65F6;&#x95F4;</li>
+</ul>
+<h3 id="&#x6570;"><a name="&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x6570;</h3>
+<p>&#x901A;&#x5E38;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x5206;&#x4E3A;&#x4E24;&#x79CD;--&#x6574;&#x578B;&#x548C;&#x6D6E;&#x70B9;&#x578B;,&#x4E3B;&#x8981;&#x7684;&#x6307;&#x6807;&#x662F;&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;&#x548C;&#x53D6;&#x503C;&#x8303;&#x56F4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</th>
+<th>&#x8303;&#x56F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>smallint(<code>int2</code>)</td>
+<td>&#x5C0F;&#x8303;&#x56F4;&#x6574;&#x578B;&#x6570;</td>
+<td>2&#x5B57;&#x8282;</td>
+<td><code>[-32768, +32767]</code></td>
+</tr>
+<tr>
+<td>integer(<code>int4</code>)</td>
+<td>&#x6574;&#x6570;&#x7684;&#x5178;&#x578B;&#x9009;&#x62E9;</td>
+<td>4&#x5B57;&#x8282;</td>
+<td><code>[-2147483648,+2147483647]</code></td>
+</tr>
+<tr>
+<td>bigint(<code>int8</code>)</td>
+<td>&#x5927;&#x8303;&#x56F4;&#x6574;&#x6570;</td>
+<td>8&#x5B57;&#x8282;</td>
+<td><code>[-9223372036854775808,+9223372036854775807]</code></td>
+</tr>
+<tr>
+<td>real(<code>float4</code>)</td>
+<td>&#x53EF;&#x53D8;&#x7CBE;&#x5EA6;&#xFF0C;&#x4E0D;&#x7CBE;&#x786E;</td>
+<td>4&#x5B57;&#x8282;</td>
+<td>6&#x4F4D;&#x5341;&#x8FDB;&#x5236;&#x7CBE;&#x5EA6;</td>
+</tr>
+<tr>
+<td>double precision(<code>float8</code>)</td>
+<td>&#x53EF;&#x53D8;&#x7CBE;&#x5EA6;&#xFF0C;&#x4E0D;&#x7CBE;&#x786E;</td>
+<td>8&#x5B57;&#x8282;</td>
+<td>15&#x4F4D;&#x5341;&#x8FDB;&#x5236;&#x7CBE;&#x5EA6;</td>
+</tr>
+<tr>
+<td>decimal(<code>decimal(n)</code>)</td>
+<td></td>
+<td>&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7CBE;&#x5EA6;,&#x7CBE;&#x786E;,&#x9700;&#x8981;&#x58F0;&#x660E;&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</td>
+<td>&#x53EF;&#x53D8;</td>
+<td>&#x6700;&#x9AD8;&#x5C0F;&#x6570;&#x70B9;&#x524D;131072&#x4F4D;,&#x4EE5;&#x53CA;&#x5C0F;&#x6570;&#x70B9;&#x540E;16383&#x4F4D;</td>
+</tr>
+<tr>
+<td>numeric(<code>numeric(n)</code>)</td>
+<td></td>
+<td>&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7CBE;&#x5EA6;,&#x7CBE;&#x786E;,&#x9700;&#x8981;&#x7533;&#x660E;&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</td>
+<td>&#x53EF;&#x53D8;</td>
+<td>&#x6700;&#x9AD8;&#x5C0F;&#x6570;&#x70B9;&#x524D;131072&#x4F4D;,&#x4EE5;&#x53CA;&#x5C0F;&#x6570;&#x70B9;&#x540E;16383&#x4F4D;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;"><a name="&#x5B57;&#x7B26;&#x4E32;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x578B;&#x5728;pg&#x4E2D;&#x6709;&#x4E09;&#x7C7B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>character varying(n) (<code>varchar(n)</code>)</td>
+<td>&#x6709;&#x9650;&#x5236;&#x7684;&#x53D8;&#x957F;</td>
+</tr>
+<tr>
+<td>character(n)(<code>char(n)</code>)</td>
+<td>&#x5B9A;&#x957F;,&#x957F;&#x5EA6;&#x4E0D;&#x8DB3;&#x7A7A;&#x683C;&#x586B;&#x5145;&#x8865;&#x4F4D;</td>
+</tr>
+<tr>
+<td>text(<code>text</code>)</td>
+<td>&#x65E0;&#x9650;&#x53D8;&#x957F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;" class="plugin-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;</h4>
+<p><a href="http://www.postgres.cn/docs/10/functions-string.html" target="_blank">pg&#x540C;&#x6837;&#x5185;&#x7F6E;&#x4E86;&#x5927;&#x91CF;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;</a>,&#x4E0B;&#x9762;&#x662F;&#x5E38;&#x89C1;&#x7684;10&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;</p>
+<ul>
+<li><code>string || string</code>&#x62FC;&#x63A5;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select &apos;this is&apos;|| &apos; my name&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result         </th></tr>
+</thead>
+<tbody>
+<tr><td>this is my name</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select &apos;this is&apos;|| 18 as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result   </th></tr>
+</thead>
+<tbody>
+<tr><td>this is18</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>bit_length(string)/char_length(string)/character_length(string)</code>&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;.<code>bit_length(string)</code>&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x957F;&#x5EA6;,&#x53E6;&#x5916;&#x4FE9;&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x957F;&#x5EA6;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select bit_length(&apos;&#x795E;&#x9A6C;&#x90FD;&#x662F;&#x6D6E;&#x4E91;&#x5450;!&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  result</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">     176</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select char_length(&apos;&#x795E;&#x9A6C;&#x90FD;&#x662F;&#x6D6E;&#x4E91;&#x5450;!&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  result</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">       8</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>lower(string)/upper(string)</code>&#x5C06;&#x82F1;&#x6587;&#x8F6C;&#x4E3A;&#x5927;&#x5199;/&#x5C0F;&#x5199;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select upper(&apos;asDF&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>ASDF    </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>substring(string [from int] [for int])</code>&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5B50;&#x4E32;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select substring(&apos;&#x795E;&#x9A6C;&#x90FD;&#x662F;&#x6D6E;&#x4E91;&#x5450;!&apos;,3,2) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>&#x90FD;&#x662F;    </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>reverse(str)</code>&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select reverse(&apos;&#x795E;&#x9A6C;&#x90FD;&#x662F;&#x6D6E;&#x4E91;&#x5450;!&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result         </th></tr>
+</thead>
+<tbody>
+<tr><td>!&#x5450;&#x4E91;&#x6D6E;&#x662F;&#x90FD;&#x9A6C;&#x795E;</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>regexp_match(string text, pattern text [, flags text])/regexp_matches(string text, pattern text [, flags text])</code>&#x4F7F;&#x7528;re&#x67E5;&#x627E;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select regexp_matches(&apos;foobarbequebaz&apos;, &apos;ba.&apos;, &apos;g&apos;)  as result
+</code></pre>
+<pre><code>2 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>[&apos;bar&apos;] </td></tr>
+<tr><td>[&apos;baz&apos;] </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>regexp_replace(string text, pattern text, replacement text [, flags text])</code>&#x4F7F;&#x7528;re&#x505A;&#x66FF;&#x6362;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select regexp_replace(&apos;Thomas&apos;, &apos;.[mN]a.&apos;, &apos;M&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>ThM     </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>regexp_split_to_table(string text, pattern text [, flags text])/regexp_split_to_array(string text, pattern text [, flags text ])</code>&#x4F7F;&#x7528;re&#x505A;&#x5B57;&#x7B26;&#x4E32;&#x62C6;&#x5206;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select regexp_split_to_array(&apos;hello world&apos;, E&apos;\\s+&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result            </th></tr>
+</thead>
+<tbody>
+<tr><td>[&apos;hello&apos;, &apos;world&apos;]</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select regexp_split_to_table(&apos;hello world&apos;, E&apos;\\s+&apos;) as result
+</code></pre>
+<pre><code>2 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>hello   </td></tr>
+<tr><td>world   </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>md5(string)</code> &#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x7684;md5hash</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select md5(&apos;&#x795E;&#x9A6C;&#x90FD;&#x662F;&#x6D6E;&#x4E91;&#x5450;!&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result                          </th></tr>
+</thead>
+<tbody>
+<tr><td>84153abdfd8776b3263694915149b345</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>to_hex(number int or bigint)</code> &#x5C06;int&#x578B;&#x7684;&#x6570;&#x5B57;&#x8F6C;&#x6210;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select to_hex(123423543215) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result    </th></tr>
+</thead>
+<tbody>
+<tr><td>1cbc9dcfaf</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="&#x5E03;&#x5C14;&#x503C;"><a name="&#x5E03;&#x5C14;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x5E03;&#x5C14;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. &#x5E03;&#x5C14;&#x503C;</h3>
+<p>pg&#x63D0;&#x4F9B;&#x6807;&#x51C6;&#x7684;SQL&#x7C7B;&#x578B;boolean,&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x72B6;&#x6001;</p>
+<ul>
+<li><code>true&#xFF08;&#x771F;)</code>&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x6709;<code>TRUE/&apos;t&apos;/&apos;true&apos;/&apos;y&apos;/&apos;yes&apos;/&apos;on&apos;/&apos;1&apos;</code></li>
+<li><code>false(&#x5047;)</code>&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x6709;<code>FALSE/&apos;f&apos;/&apos;false&apos;/&apos;n&apos;/&apos;no&apos;/&apos;off&apos;/&apos;0&apos;</code></li>
+<li>&#x7B2C;&#x4E09;&#x79CD;&#x72B6;&#x6001;<code>unknown(&#x672A;&#x77E5;)</code>,&#x672A;&#x77E5;&#x72B6;&#x6001;&#x7531;SQL&#x7A7A;&#x503C;&#x8868;&#x793A;.</li>
+</ul>
+<h3 id="&#x65F6;&#x95F4;"><a name="&#x65F6;&#x95F4;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. &#x65F6;&#x95F4;</h3>
+<p>pg&#x652F;&#x6301;&#x5404;&#x79CD;&#x65F6;&#x95F4;&#x8868;&#x793A;,&#x4E3B;&#x8981;&#x7684;&#x76F8;&#x5173;&#x7C7B;&#x578B;&#x5305;&#x62EC;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x5B57;</th>
+<th>&#x522B;&#x540D;</th>
+<th>&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x6700;&#x5C0F;&#x503C;</th>
+<th>&#x6700;&#x5927;&#x503C;</th>
+<th>&#x89E3;&#x6790;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timestamp [ (p) ] [ without time zone ]</code></td>
+<td><code>timestamp</code></td>
+<td>8&#x5B57;&#x8282;</td>
+<td>&#x5305;&#x62EC;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;,&#x65E0;&#x65F6;&#x533A;</td>
+<td>4713 BC</td>
+<td>294276 AD</td>
+<td>1&#x5FAE;&#x79D2;/14&#x4F4D;</td>
+</tr>
+<tr>
+<td><code>timestamp [ (p) ] with time zone</code></td>
+<td><code>timestampz</code></td>
+<td>8&#x5B57;&#x8282;</td>
+<td>&#x5305;&#x62EC;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;,&#x6709;&#x65F6;&#x533A;</td>
+<td>4713 BC</td>
+<td>294276 AD</td>
+<td>1&#x5FAE;&#x79D2;/14&#x4F4D;</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code></td>
+<td>4&#x5B57;&#x8282;</td>
+<td>&#x65E5;&#x671F;(&#x6CA1;&#x6709;&#x4E00;&#x5929;&#x4E2D;&#x7684;&#x65F6;&#x95F4;)</td>
+<td>4713 BC</td>
+<td>5874897 AD</td>
+<td>1&#x65E5;</td>
+</tr>
+<tr>
+<td><code>time [ (p) ] [ without time zone ]</code></td>
+<td><code>time</code></td>
+<td>8&#x5B57;&#x8282;</td>
+<td>&#x4E00;&#x5929;&#x4E2D;&#x7684;&#x65F6;&#x95F4;(&#x65E0;&#x65E5;&#x671F;)</td>
+<td>00:00:00</td>
+<td>24:00:00</td>
+<td>1&#x5FAE;&#x79D2;/14&#x4F4D;</td>
+</tr>
+<tr>
+<td><code>time [ (p) ] with time zone</code></td>
+<td><code>timez</code></td>
+<td>12&#x5B57;&#x8282;</td>
+<td>&#x4E00;&#x5929;&#x4E2D;&#x7684;&#x65F6;&#x95F4;(&#x4E0D;&#x5E26;&#x65E5;&#x671F;),&#x5E26;&#x6709;&#x65F6;&#x533A;</td>
+<td>00:00:00+1459</td>
+<td>24:00:00-1459</td>
+<td>1&#x5FAE;&#x79D2;/14&#x4F4D;</td>
+</tr>
+<tr>
+<td><code>interval [ fields ] [ (p) ]</code></td>
+<td><code>interval</code></td>
+<td>16&#x5B57;&#x8282;</td>
+<td>&#x65F6;&#x95F4;&#x95F4;&#x9694;</td>
+<td>-178000000&#x5E74;</td>
+<td>178000000&#x5E74;</td>
+<td>1&#x5FAE;&#x79D2;/14&#x4F4D;</td>
+</tr>
+</tbody>
+</table>
+<p>time/timestamp&#x548C;interval&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x7CBE;&#x5EA6;&#x503C;<code>p</code>,&#x8FD9;&#x4E2A;&#x7CBE;&#x5EA6;&#x503C;&#x58F0;&#x660E;&#x5728;&#x79D2;&#x57DF;&#x4E2D;&#x5C0F;&#x6570;&#x70B9;&#x4E4B;&#x540E;&#x4FDD;&#x7559;&#x7684;&#x4F4D;&#x6570;.&#x7F3A;&#x7701;&#x60C5;&#x51B5;&#x4E0B;&#x5728;&#x7CBE;&#x5EA6;&#x4E0A;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x7684;&#x8FB9;&#x754C;,p&#x5141;&#x8BB8;&#x7684;&#x8303;&#x56F4;&#x662F;&#x4ECE; 0 &#x5230; 6.</p>
+<p>timestamp&#x548C;time&#x5728;&#x8F93;&#x5165;&#x65F6;&#x533A;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x5FFD;&#x7565;,timestampz&#x548C;timez&#x5728;&#x7F3A;&#x7701;&#x65F6;&#x533A;&#x65F6;&#x8BA4;&#x4E3A;&#x65F6;utc&#x65F6;&#x533A;,&#x56E0;&#x6B64;&#x6BD4;&#x8F83;&#x9760;&#x8C31;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;timestampz&#x548C;timez&#x5E76;&#x5168;&#x5C40;&#x4F7F;&#x7528;utc&#x65F6;&#x95F4;.</p>
+<p>interval&#x7C7B;&#x578B;&#x6709;&#x4E00;&#x4E2A;&#x9644;&#x52A0;&#x9009;&#x9879;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5199;&#x4E0B;&#x9762;&#x4E4B;&#x4E00;&#x7684;&#x77ED;&#x8BED;&#x6765;&#x9650;&#x5236;&#x5B58;&#x50A8;&#x7684;fields&#x7684;&#x96C6;&#x5408;&#xFF1A;</p>
+<ul>
+<li>YEAR</li>
+<li>MONTH</li>
+<li>DAY</li>
+<li>HOUR</li>
+<li>MINUTE</li>
+<li>SECOND</li>
+<li>YEAR TO MONTH</li>
+<li>DAY TO HOUR</li>
+<li>DAY TO MINUTE</li>
+<li>DAY TO SECOND</li>
+<li>HOUR TO MINUTE</li>
+<li>HOUR TO SECOND</li>
+<li>MINUTE TO SECOND</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#x5982;&#x679C;fields&#x548C;p&#x88AB;&#x6307;&#x5B9A;,fields&#x5FC5;&#x987B;&#x5305;&#x62EC;SECOND,&#x56E0;&#x4E3A;&#x7CBE;&#x5EA6;&#x53EA;&#x5E94;&#x7528;&#x4E8E;&#x79D2;.</p>
+<h4 id="&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;"><a name="&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;" class="plugin-anchor" href="#&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;</h4>
+<p>pg&#x4E2D;&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x5165;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;<code>&apos;</code>.&#x4E0B;&#x9762;&#x662F;&#x65F6;&#x95F4;,&#x65E5;&#x671F;,&#x65F6;&#x533A;&#x7684;&#x53EF;&#x9009;&#x5F62;&#x5F0F;</p>
+<blockquote>
+<p>&#x65E5;&#x671F;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>&#x4F8B;&#x5B50;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1999-01-08</code></td>
+<td>ISO 8601; &#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;1&#x6708;8&#x65E5;,&#x63A8;&#x8350;&#x683C;&#x5F0F;</td>
+</tr>
+<tr>
+<td><code>January 8, 1999</code></td>
+<td>&#x5728;&#x4EFB;&#x4F55;datestyle&#x8F93;&#x5165;&#x6A21;&#x5F0F;&#x4E0B;&#x90FD;&#x65E0;&#x6B67;&#x4E49;</td>
+</tr>
+<tr>
+<td><code>1/8/1999</code></td>
+<td>MDY&#x6A21;&#x5F0F;&#x4E2D;&#x7684;1&#x6708;8&#x65E5;&#xFF1B;DMY&#x6A21;&#x5F0F;&#x4E2D;&#x7684;8&#x6708;1&#x65E5;</td>
+</tr>
+<tr>
+<td><code>1/18/1999</code></td>
+<td>MDY&#x6A21;&#x5F0F;&#x4E2D;&#x7684;1&#x6708;18&#x65E5;&#xFF1B;&#x5728;&#x5176;&#x4ED6;&#x6A21;&#x5F0F;&#x4E2D;&#x88AB;&#x62D2;&#x7EDD;</td>
+</tr>
+<tr>
+<td><code>01/02/03</code></td>
+<td>MDY&#x6A21;&#x5F0F;&#x4E2D;&#x7684;2003&#x5E74;1&#x6708;2&#x65E5;&#xFF1B; DMY&#x6A21;&#x5F0F;&#x4E2D;&#x7684;2003&#x5E74;2&#x6708;1&#x65E5;&#xFF1B; YMD&#x6A21;&#x5F0F;&#x4E2D;&#x7684;2001&#x5E74;2&#x6708;3&#x65E5;</td>
+</tr>
+<tr>
+<td><code>1999-Jan-08</code></td>
+<td>&#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;1&#x6708;8&#x65E5;</td>
+</tr>
+<tr>
+<td><code>Jan-08-1999</code></td>
+<td>&#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;1&#x6708;8&#x65E5;</td>
+</tr>
+<tr>
+<td><code>08-Jan-1999</code></td>
+<td>&#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;1&#x6708;8&#x65E5;</td>
+</tr>
+<tr>
+<td><code>99-Jan-08</code></td>
+<td>YMD&#x6A21;&#x5F0F;&#x4E2D;&#x7684;1&#x6708;8&#x65E5;&#xFF0C;&#x5426;&#x5219;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td><code>08-Jan-99</code></td>
+<td>1&#x6708;8&#x65E5;&#xFF0C;&#x9664;&#x4E86;&#x5728;YMD&#x6A21;&#x5F0F;&#x4E2D;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td><code>Jan-08-99</code></td>
+<td>1&#x6708;8&#x65E5;&#xFF0C;&#x9664;&#x4E86;&#x5728;YMD&#x6A21;&#x5F0F;&#x4E2D;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td><code>19990108</code></td>
+<td>ISO 8601; &#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;1999&#x5E74;1&#x6708;8&#x65E5;</td>
+</tr>
+<tr>
+<td><code>990108</code></td>
+<td>ISO 8601; &#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;1999&#x5E74;1&#x6708;8&#x65E5;</td>
+</tr>
+<tr>
+<td><code>1999.008</code></td>
+<td>&#x5E74;&#x548C;&#x4E00;&#x5E74;&#x4E2D;&#x7684;&#x65E5;&#x5B50;</td>
+</tr>
+<tr>
+<td><code>J2451187</code></td>
+<td>&#x5112;&#x7565;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td><code>January 8, 99 BC</code></td>
+<td>&#x516C;&#x5143;&#x524D;99&#x5E74;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x65F6;&#x95F4;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>&#x4F8B;&#x5B50;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>04:05:06.789</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05:06</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>040506</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05 AM</code></td>
+<td>&#x548C;04:05&#x4E00;&#x6837;&#xFF0C;AM&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x503C;</td>
+</tr>
+<tr>
+<td><code>04:05 PM</code></td>
+<td>&#x548C;16:05&#x4E00;&#x6837;&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x5C0F;&#x65F6;&#x5FC5;&#x987B;&#x4E3A; &lt;= 12</td>
+</tr>
+<tr>
+<td><code>04:05:06.789-8</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05:06-08:00</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05-08:00</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>040506-08</code></td>
+<td>ISO 8601</td>
+</tr>
+<tr>
+<td><code>04:05:06 PST</code></td>
+<td>&#x7F29;&#x5199;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x533A;</td>
+</tr>
+<tr>
+<td><code>2003-04-12 04:05:06 America/New_York</code></td>
+<td>&#x5168;&#x540D;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x533A;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x65F6;&#x533A;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>&#x4F8B;&#x5B50;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PST</code></td>
+<td>&#x7F29;&#x5199;&#xFF08;&#x592A;&#x5E73;&#x6D0B;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#xFF09;</td>
+</tr>
+<tr>
+<td><code>America/New_York</code></td>
+<td>&#x5B8C;&#x6574;&#x65F6;&#x533A;&#x540D;</td>
+</tr>
+<tr>
+<td><code>PST8PDT</code></td>
+<td>POSIX&#x98CE;&#x683C;&#x7684;&#x65F6;&#x533A;&#x58F0;&#x660E;</td>
+</tr>
+<tr>
+<td><code>-8:00</code></td>
+<td>PST&#x7684;ISO-8601&#x504F;&#x79FB;</td>
+</tr>
+<tr>
+<td><code>-800</code></td>
+<td>PST&#x7684;ISO-8601&#x504F;&#x79FB;</td>
+</tr>
+<tr>
+<td><code>-8</code></td>
+<td>PST&#x7684;ISO-8601&#x504F;&#x79FB;</td>
+</tr>
+<tr>
+<td><code>zulu</code></td>
+<td>UTC&#x7684;&#x519B;&#x65B9;&#x7F29;&#x5199;</td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td>zulu&#x7684;&#x77ED;&#x5F62;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
+<p>pg&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x652F;&#x6301;,&#x53EF;&#x4EE5;&#x5E94;&#x4ED8;&#x591A;&#x6837;&#x7684;&#x9700;&#x6C42;,&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5305;&#x62EC;</p>
+<ul>
+<li><p>array</p>
+</li>
+<li><p>json/jsonb</p>
+</li>
+<li><p>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+</li>
+<li><p>&#x5E8F;&#x5217;</p>
+</li>
+<li><p>bitmap</p>
+</li>
+<li><p>money</p>
+</li>
+<li><p>uuid</p>
+</li>
+<li><p>&#x7F51;&#x7EDC;&#x5730;&#x5740;</p>
+</li>
+<li><p>&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;</p>
+</li>
+<li><p>&#x51E0;&#x4F55;&#x56FE;&#x5F62;</p>
+</li>
+</ul>
+<p>&#x540C;&#x65F6;pg&#x8FD8;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</p>
+<h3 id="array"><a name="array" class="anchor-navigation-ex-anchor" href="#array"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. array</h3>
+<p>PG&#x652F;&#x6301;&#x5B9A;&#x4E49;&#x53D8;&#x957F;/&#x5B9A;&#x957F;&#x591A;&#x7EF4;&#x6570;&#x7EC4;,&#x8FD9;&#x4E00;&#x7279;&#x6027;&#x8BA9;&#x4ED6;&#x6210;&#x4E86;&#x4FDD;&#x5B58;&#x77E9;&#x9635;&#x6570;&#x636E;&#x7684;&#x4F18;&#x79C0;&#x5DE5;&#x5177;.</p>
+<h4 id="array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><a name="array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>array&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;</h4>
+<p>array&#x5B9A;&#x4E49;&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;array,&#x4F7F;&#x7528;<code>type[]</code>&#x8868;&#x793A;&#x4E0D;&#x5B9A;&#x957F;&#x7684;&#x6570;&#x7EC4;,&#x7528;<code>type[n]</code>&#x8868;&#x793A;&#x5B9A;&#x957F;&#x6570;&#x7EC4;,&#x540C;&#x65F6;array&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x7EF4;&#x6570;&#x7EC4;.</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x8868;&#x793A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x8BCD;<code>ARRAY</code>.</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5305;&#x542B;array&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x7684;&#x8868;</p>
+<pre><code class="lang-PostgreSQL">CREATE TABLE IF NOT EXISTS array_test(
+    a int4 PRIMARY KEY,
+   b int4[][],
+    c text ARRAY
+)
+</code></pre>
+<pre><code>NOTICE:  relation &quot;array_test&quot; already exists, skipping
+</code></pre><h4 id="array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;"><a name="array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;" class="anchor-navigation-ex-anchor" href="#array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;" class="plugin-anchor" href="#array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>array&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x5165;&#x8868;&#x793A;</h4>
+<p>array&#x9ED8;&#x8BA4;&#x8F93;&#x5165;&#x8868;&#x793A;&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;,&#x4F7F;&#x7528;&#x82B1;&#x62EC;&#x53F7;<code>{}</code>&#x5305;&#x88F9;&#x5143;&#x7D20;,&#x4F46;&#x6574;&#x4F53;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;<code>&apos;</code>&#x5305;&#x88F9;</p>
+<pre><code class="lang-PostgreSQL">INSERT INTO array_test (a,b,c) VALUES (
+    1,
+   &apos;{{1,2,3},{4,5,6},{7,8,9}}&apos;,
+    &apos;{&quot;a&quot;,&quot;b&quot;,&quot;d&quot;}&apos;
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">select * from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b                                </th><th>c              </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[[1, 2, 3], [4, 5, 6], [7, 8, 9]]</td><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+<h4 id="array&#x7684;&#x64CD;&#x4F5C;"><a name="array&#x7684;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#array&#x7684;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="array&#x7684;&#x64CD;&#x4F5C;" class="plugin-anchor" href="#array&#x7684;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>array&#x7684;&#x64CD;&#x4F5C;</h4>
+<p>array&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;</p>
+<ol>
+<li><p>&#x67E5;&#x8BE2;</p>
+</li>
+<li><p>&#x66FF;&#x6362;</p>
+</li>
+<li><p>&#x641C;&#x7D22;</p>
+</li>
+</ol>
+<blockquote>
+<p>&#x67E5;&#x8BE2;</p>
+</blockquote>
+<p>array&#x7684;&#x6309;&#x4F4D;&#x67E5;&#x8BE2;&#x548C;&#x5927;&#x591A;&#x6570;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x4E2D;&#x51E0;&#x4E4E;&#x4E00;&#x6837;,&#x5C31;&#x662F;&#x7528;<code>[]</code>&#x9009;&#x62E9;&#x8981;&#x67E5;&#x770B;&#x7684;&#x4E0B;&#x6807;&#x5373;&#x53EF;,&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;array&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;1&#x800C;&#x4E0D;&#x662F;&#x5927;&#x591A;&#x6570;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;0.&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;python&#x4E2D;&#x7684;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#x6765;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B50;array,&#x540C;&#x6837;&#x4E0D;&#x540C;&#x4E8E;python&#x4E2D;,<code>:</code>&#x540E;&#x7684;&#x4E0B;&#x6807;&#x4E5F;&#x4F1A;&#x88AB;&#x8BBF;&#x95EE;&#x5230;</p>
+<pre><code class="lang-PostgreSQL">select b[1][1] as result from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  result</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">       1</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select c[1:2] as result from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result    </th></tr>
+</thead>
+<tbody>
+<tr><td>[&apos;a&apos;, &apos;b&apos;]</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select c[1:3] as result from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result         </th></tr>
+</thead>
+<tbody>
+<tr><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+<blockquote>
+<p>&#x66FF;&#x6362;</p>
+</blockquote>
+<p>&#x6570;&#x7EC4;&#x7684;&#x66FF;&#x6362;&#x53EF;&#x4EE5;&#x662F;&#x6574;&#x4F53;&#x66FF;&#x6362;,&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6309;&#x4F4D;&#x66FF;&#x6362;,&#x90FD;&#x5F97;&#x4F7F;&#x7528;update&#x8BED;&#x53E5;</p>
+<pre><code class="lang-PostgreSQL">UPDATE array_test SET b = &apos;{{2,4,6,8,10},{1,3,5,7,9}}&apos;where a = 1
+</code></pre>
+<pre><code class="lang-PostgreSQL">select * from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b                                  </th><th>c              </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[[2, 4, 6, 8, 10], [1, 3, 5, 7, 9]]</td><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">UPDATE array_test SET b[2][2] = 100 where a = 1
+</code></pre>
+<pre><code class="lang-PostgreSQL">select * from array_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b                                    </th><th>c              </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[[2, 4, 6, 8, 10], [1, 100, 5, 7, 9]]</td><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+<blockquote>
+<p>&#x641C;&#x7D22;</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5224;&#x65AD;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5728;&#x6570;&#x7EC4;&#x5185;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ANY</code>&#x548C;<code>ALL</code>;&#x5982;&#x679C;&#x662F;&#x5224;&#x65AD;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x4E3A;&#x7279;&#x5B9A;&#x503C;,&#x5219;&#x76F4;&#x63A5;&#x7528;<code>=</code>&#x53F7;&#x5373;&#x53EF;</p>
+<pre><code class="lang-PostgreSQL">select * from array_test where b[1][1] = 2
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b                                    </th><th>c              </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[[2, 4, 6, 8, 10], [1, 100, 5, 7, 9]]</td><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select * from array_test where 11 = ANY(b)
+</code></pre>
+<pre><code>0 row(s) returned.
+</code></pre><pre><code class="lang-PostgreSQL">select * from array_test where 10 = ANY(b)
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b                                    </th><th>c              </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[[2, 4, 6, 8, 10], [1, 100, 5, 7, 9]]</td><td>[&apos;a&apos;, &apos;b&apos;, &apos;d&apos;]</td></tr>
+</tbody>
+</table>
+
+
+<h2 id="jsonjsonb"><a name="jsonjsonb" class="anchor-navigation-ex-anchor" href="#jsonjsonb"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. json/jsonb</h2>
+<p>Json&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x5B58;&#x50A8;&#x4E3A;text,&#x4E8B;&#x5B9E;&#x4E0A;&#x8BB8;&#x591A;&#x516C;&#x53F8;&#x4F7F;&#x7528;mysql&#x65F6;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x5C06;json&#x5B58;&#x5728;text&#x7C7B;&#x578B;&#x4E2D;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x89E3;&#x6790;&#x7684;,&#x4F46;JSON&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x80FD;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x6BCF;&#x4E2A;&#x88AB;&#x5B58;&#x50A8;&#x7684;&#x503C;&#x7B26;&#x5408;JSON&#x89C4;&#x5219;,&#x540C;&#x65F6;&#x652F;&#x6301;&#x5F88;&#x591A;JSON&#x76F8;&#x5173;&#x7684;&#x51FD;&#x6570;&#x548C;&#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5728;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x6570;&#x636E;.</p>
+<p>Pg&#x652F;&#x6301;&#x4E24;&#x79CD;Json&#x6570;&#x636E;&#x7C7B;&#x578B;--json&#x548C;jsonb.&#x4E24;&#x8005;&#x51E0;&#x4E4E;&#x63A5;&#x53D7;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x503C;&#x96C6;&#x5408;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;,&#x533A;&#x522B;&#x5728;&#x4E8E;&#x6548;&#x7387;.</p>
+<ul>
+<li><p>json&#x662F;&#x5BF9;&#x8F93;&#x5165;&#x7684;&#x5B8C;&#x6574;&#x62F7;&#x8D1D;,&#x4F7F;&#x7528;&#x65F6;&#x518D;&#x53BB;&#x89E3;&#x6790;,&#x6240;&#x4EE5;&#x5B83;&#x4F1A;&#x4FDD;&#x7559;&#x8F93;&#x5165;&#x7684;&#x7A7A;&#x683C;,&#x91CD;&#x590D;&#x952E;&#x4EE5;&#x53CA;&#x987A;&#x5E8F;&#x7B49;,&#x56E0;&#x6B64;json&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x5FEB;&#xFF0C;&#x67E5;&#x8BE2;&#x6162;;</p>
+</li>
+<li><p>jsonb&#x662F;&#x89E3;&#x6790;&#x8F93;&#x5165;&#x540E;&#x4FDD;&#x5B58;&#x7684;&#x4E8C;&#x8FDB;&#x5236;,&#x5B83;&#x5728;&#x89E3;&#x6790;&#x65F6;&#x4F1A;&#x5220;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x7A7A;&#x683C;&#x548C;&#x91CD;&#x590D;&#x7684;&#x952E;,&#x987A;&#x5E8F;&#x548C;&#x8F93;&#x5165;&#x53EF;&#x80FD;&#x4E5F;&#x4E0D;&#x76F8;&#x540C;.&#x4F7F;&#x7528;&#x65F6;&#x4E0D;&#x7528;&#x518D;&#x6B21;&#x89E3;&#x6790;.jsonb&#x4E5F;&#x652F; &#x6301;&#x7D22;&#x5F15;,&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x4EE4;&#x4EBA;&#x77A9;&#x76EE;&#x7684;&#x4F18;&#x52BF;,&#x56E0;&#x6B64;jsonb&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x7A0D;&#x6162;&#xFF0C;&#x67E5;&#x8BE2;&#x8F83;&#x5FEB;.</p>
+</li>
+</ul>
+<p>&#x4F7F;&#x7528;json&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6700;&#x597D;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x5E93;&#x4F7F;&#x7528;&#x7684;&#x65F6;utf-8&#x7F16;&#x7801;,&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7F16;&#x7801;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x95EE;&#x9898;.</p>
+<h3 id="json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;"><a name="json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. json&#x4E2D;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;pg&#x4E2D;&#x7684;&#x7C7B;&#x578B;</h3>
+<table>
+<thead>
+<tr>
+<th>JSON &#x57FA;&#x672C;&#x7C7B;&#x578B;</th>
+<th>&#x76F8;&#x5E94;&#x7684;PostgreSQL&#x7C7B;&#x578B;</th>
+<th>&#x8865;&#x5145;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>text</td>
+<td>&#x4E0D;&#x5141;&#x8BB8;<code>\u0000</code>,&#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x7F16;&#x7801;&#x4E0D;&#x662F;<code>UTF8</code>,&#x975E;<code>ASCII</code>&#x7684;<code>Unicode</code>&#x8F6C;&#x4E49;&#x4F1A;&#x51FA;&#x9519;</td>
+</tr>
+<tr>
+<td>number</td>
+<td>numeric</td>
+<td>&#x4E0D;&#x5141;&#x8BB8;<code>NaN</code> &#x548C;<code>infinity</code>&#x503C;</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>boolean</td>
+<td>&#x53EA;&#x63A5;&#x53D7;&#x5C0F;&#x5199;<code>true</code>&#x548C;<code>false</code>&#x62FC;&#x5199;</td>
+</tr>
+<tr>
+<td>null</td>
+<td>(&#x65E0;)</td>
+<td>SQL NULL&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x6982;&#x5FF5;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><a name="json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>json&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;</h4>
+<p>json/jsonb&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;.&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5305;&#x542B;json&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x7684;&#x8868;</p>
+<pre><code class="lang-PostgreSQL">CREATE TABLE IF NOT EXISTS json_test(
+   a json,
+   b jsonb
+)
+</code></pre>
+<h4 id="json&#x7684;&#x8F93;&#x5165;"><a name="json&#x7684;&#x8F93;&#x5165;" class="anchor-navigation-ex-anchor" href="#json&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="json&#x7684;&#x8F93;&#x5165;" class="plugin-anchor" href="#json&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>json&#x7684;&#x8F93;&#x5165;</h4>
+<p>json&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8F93;&#x5165;,&#x5FC5;&#x987B;&#x5148;&#x8F93;&#x5165;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;,&#x7136;&#x540E;&#x8F6C;&#x5316;&#x4E3A;json&#x6216;&#x8005;jsonb</p>
+<pre><code class="lang-PostgreSQL">INSERT INTO json_test (a,b) VALUES 
+(&apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::json,
+ &apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::jsonb)
+</code></pre>
+<pre><code class="lang-PostgreSQL">SELECT * from json_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>a                                         </th><th>b                                         </th></tr>
+</thead>
+<tbody>
+<tr><td>[{&apos;a&apos;: &apos;foo&apos;}, {&apos;b&apos;: &apos;bar&apos;}, {&apos;c&apos;: &apos;baz&apos;}]</td><td>[{&apos;a&apos;: &apos;foo&apos;}, {&apos;b&apos;: &apos;bar&apos;}, {&apos;c&apos;: &apos;baz&apos;}]</td></tr>
+</tbody>
+</table>
+
+
+<h4 id="json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;"><a name="json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;" class="plugin-anchor" href="#json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a href="http://www.postgres.cn/docs/10/functions-json.html" target="_blank">json&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E0E;&#x51FD;&#x6570;</a></h4>
+<p>json&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x548C;&#x51FD;&#x6570;&#x5F88;&#x591A;,&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x7684;&#x65F6;&#x6700;&#x5E38;&#x7528;&#x7684;10&#x4E2A;:</p>
+<ul>
+<li><code>-&gt; [int|text]</code>&#x83B7;&#x53D6;json&#x4E2D;Array&#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x4E0B;&#x6807;&#x7684;&#x6570;&#x636E;&#x6216;&#x8005;Object&#x5BF9;&#x8C61;&#x7684;&#x5BF9;&#x5E94;key&#x7684;&#x503C;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT a-&gt;1 as result from json_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result      </th></tr>
+</thead>
+<tbody>
+<tr><td>{&apos;b&apos;: &apos;bar&apos;}</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">SELECT  &apos;{&quot;a&quot;: {&quot;a1&quot;:&quot;foo&quot;},&quot;b&quot;:{&quot;b1&quot;:&quot;bar&quot;}}&apos;::json-&gt;&apos;b&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result       </th></tr>
+</thead>
+<tbody>
+<tr><td>{&apos;b1&apos;: &apos;bar&apos;}</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">SELECT b-&gt;1 as result from json_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result      </th></tr>
+</thead>
+<tbody>
+<tr><td>{&apos;b&apos;: &apos;bar&apos;}</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>-&gt;&gt; [int|text]</code>&#x83B7;&#x53D6;json&#x4E2D;Array&#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x4E0B;&#x6807;&#x7684;&#x6570;&#x636E;&#x7684;&#x6587;&#x672C;&#x5F62;&#x5F0F;&#x6216;&#x8005;Object&#x5BF9;&#x8C61;&#x7684;&#x5BF9;&#x5E94;key&#x7684;&#x503C;&#x7684;&#x6587;&#x672C;&#x5F62;&#x5F0F;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT &apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::json-&gt;&gt;1 as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result     </th></tr>
+</thead>
+<tbody>
+<tr><td>{&quot;b&quot;:&quot;bar&quot;}</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">SELECT  &apos;{&quot;a&quot;: {&quot;a1&quot;:&quot;foo&quot;},&quot;b&quot;:{&quot;b1&quot;:&quot;bar&quot;}}&apos;::json-&gt;&gt;&apos;b&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result      </th></tr>
+</thead>
+<tbody>
+<tr><td>{&quot;b1&quot;:&quot;bar&quot;}</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>@&gt; [jsonb]</code>&#x5DE6;&#x8FB9;&#x7684;JSON&#x503C;&#x662F;&#x5426;&#x5305;&#x542B;&#x9876;&#x5C42;&#x53F3;&#x8FB9;JSON&#x8DEF;&#x5F84;/&#x503C;&#x9879;(&#x9650;jsonb)</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT &apos;[1, 2, 3]&apos;::jsonb @&gt; &apos;[1, 3]&apos;::jsonb as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>True    </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>&lt;@ [jsonb]</code>&#x5DE6;&#x8FB9;&#x7684;JSON&#x8DEF;&#x5F84;/&#x503C;&#x662F;&#x5426;&#x5305;&#x542B;&#x5728;&#x9876;&#x5C42;&#x53F3;&#x8FB9;JSON&#x503C;&#x4E2D;(&#x9650;jsonb)</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select &apos;{&quot;b&quot;:2}&apos;::jsonb &lt;@ &apos;{&quot;a&quot;:1, &quot;b&quot;:2}&apos;::jsonb as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>True    </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>?text</code>&#x5224;&#x65AD;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x9876;&#x5C42;&#x952E;&#x503C;&#x5B58;&#x5728;&#x4E8E;JSON&#x4E2D;(&#x9650;jsonb)</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select &apos;{&quot;b&quot;:2}&apos;::jsonb ?&apos;b&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>True    </td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>#&gt;text[]/#&gt;&gt;text[]</code>&#x83B7;&#x53D6;&#x5728;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x7684; JSON &#x5BF9;&#x8C61;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT &apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::json#&gt;&apos;{1,b}&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>bar     </td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">SELECT &apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::json#&gt;&gt;&apos;{1}&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result     </th></tr>
+</thead>
+<tbody>
+<tr><td>{&quot;b&quot;:&quot;bar&quot;}</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>#-text[]</code>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x5143;&#x7D20;(&#x9650;jsonb)</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT &apos;[{&quot;a&quot;:&quot;foo&quot;},{&quot;b&quot;:&quot;bar&quot;},{&quot;c&quot;:&quot;baz&quot;}]&apos;::jsonb#-&apos;{1}&apos; as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result                      </th></tr>
+</thead>
+<tbody>
+<tr><td>[{&apos;a&apos;: &apos;foo&apos;}, {&apos;c&apos;: &apos;baz&apos;}]</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>jsonb_insert(target jsonb, path text[], new_value jsonb, [insert_after boolean])</code>&#x5411;json&#x4E2D;&#x63D2;&#x5165;&#x5143;&#x7D20;(&#x9650;jsonb)</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select jsonb_insert(&apos;{&quot;a&quot;: [0,1,2]}&apos;, &apos;{a, 1}&apos;, &apos;&quot;new_value&quot;&apos;) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result                       </th></tr>
+</thead>
+<tbody>
+<tr><td>{&apos;a&apos;: [0, &apos;new_value&apos;, 1, 2]}</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>array_to_json(anyarray [, pretty_bool])</code>&#x5C06;&#x6570;&#x7EC4;&#x5F53;&#x4F5C;json&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">SELECT array_to_json(&apos;{1,2,3,4,5}&apos;::int[]) as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result         </th></tr>
+</thead>
+<tbody>
+<tr><td>[1, 2, 3, 4, 5]</td></tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><code>json_to_record(json)/jsonb_to_record(jsonb)</code>&#x5C06;json&#x6269;&#x5C55;&#x4E3A;&#x4E00;&#x884C;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-PostgreSQL">select * from json_to_record(&apos;{&quot;a&quot;:1,&quot;b&quot;:[1,2,3],&quot;c&quot;:[1,2,3],&quot;e&quot;:&quot;bar&quot;,&quot;r&quot;: {&quot;a&quot;: 123, &quot;b&quot;: &quot;a b c&quot;}}&apos;) as x(a int, b text, c int[], d text, r jsonb)
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b      </th><th>c        </th><th>d  </th><th>r                       </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>[1,2,3]</td><td>[1, 2, 3]</td><td>   </td><td>{&apos;a&apos;: 123, &apos;b&apos;: &apos;a b c&apos;}</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="&#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;"><a name="&#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x4E3A;jsonb&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;</h3>
+<p>GIN&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x6709;&#x6548;&#x5730;&#x641C;&#x7D22;&#x5728;&#x5927;&#x91CF;jsonb&#x6587;&#x6863;(&#x6570;&#x636E;)&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x952E;&#x6216;&#x8005;&#x952E;&#x503C;&#x5BF9;.&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD; GIN &apos;&#x64CD;&#x4F5C;&#x7B26;&#x7C7B;&apos;,&#x5B83;&#x4EEC;&#x5728;&#x6027;&#x80FD;&#x548C;&#x7075;&#x6D3B;&#x6027;&#x65B9;&#x9762;&#x505A;&#x51FA;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x8861;.</p>
+<p>jsonb&#x7684;&#x9ED8;&#x8BA4; GIN &#x64CD;&#x4F5C;&#x7B26;&#x7C7B;&#x652F;&#x6301;&#x4F7F;&#x7528;@&gt;&#x3001; ?&#x3001;?&amp;&#x4EE5;&#x53CA;?|&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x67E5;&#x8BE2;&#xFF08;&#x8FD9;&#x4E9B; &#x64CD;&#x4F5C;&#x7B26;&#x5B9E;&#x73B0;&#x7684;&#x8BE6;&#x7EC6;&#x8BED;&#x4E49;&#x8BF7;&#x89C1;&#x8868; 9.44&#xFF09;&#x3002; &#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x7B26;&#x7C7B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<ul>
+<li>&#x7B80;&#x5355;&#x7D22;&#x5F15;<code>jsonb_ops</code>,jsonb&#x5EFA;&#x7ACB;gin&#x7D22;&#x5F15;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;,&#x4F7F;&#x7528;&#x8BED;&#x53E5;<code>CREATE INDEX c_index ON json_test USING gin (c)</code>.&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x652F;&#x6301;&#x7D22;&#x5F15;<code>@&gt;&#x548C; ?&#x548C;?&amp;&#x548C;?|</code>&#x64CD;&#x4F5C;&#x7B26;,&#x8FD9;&#x79CD;&#x7D22;&#x5F15;&#x4E3A;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x952E;&#x548C;&#x503C;&#x521B;&#x5EFA;&#x72EC;&#x7ACB;&#x7684;&#x7D22;&#x5F15;&#x9879;.&#x56E0;&#x6B64;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x66F4;&#x5927;,&#x6027;&#x80FD;&#x4E0D;&#x53CA;&#x4E0B;&#x9762;&#x90A3;&#x79CD;&#x7D22;&#x5F15;,&#x4F46;&#x80DC;&#x5728;&#x7075;&#x6D3B;.</li>
+</ul>
+<ul>
+<li><code>jsonb_path_ops</code>&#x7D22;&#x5F15;,&#x4F7F;&#x7528;&#x8BED;&#x53E5;<code>CREATE INDEX c_index ON json_test USING gin (c jsonb_path_ops)</code>.&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x53EA;&#x652F;&#x6301;&#x7D22;&#x5F15;<code>@&gt;</code>&#x64CD;&#x4F5C;&#x7B26;. &#x8FD9;&#x79CD;&#x7D22;&#x5F15;&#x4E3A;&#x8BE5;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x9879;,&#x8FD9;&#x79CD;&#x7D22;&#x5F15;&#x7684;&#x4E00;&#x4E2A;&#x4E0D;&#x8DB3;&#x662F;&#x5B83;&#x4E0D;&#x4F1A;&#x4E3A;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x503C;&#x7684;JSON&#x7ED3;&#x6784;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x9879;.</li>
+</ul>
+<h3 id="&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. &#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3>
+<p>PG&#x4E2D;&#x4F7F;&#x7528;<code>bytea</code>&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;,&#x5B83;&#x662F;&#x53D8;&#x957F;&#x4E8C;&#x8FDB;&#x5236;&#x4E32;,&#x5176;&#x957F;&#x5EA6;&#x4E3A;1&#x6216;4&#x5B57;&#x8282;&#x5916;&#x52A0;&#x771F;&#x6B63;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E32;&#x7684;&#x957F;&#x5EA6;.&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#x867D;&#x7136;pg&#x53EF;&#x4EE5;&#x652F;&#x6301;1g&#x5927;&#x5C0F;&#x7684;&#x6570;&#x636E;,&#x4F46;&#x5927;&#x6587;&#x4EF6;&#x4F7F;&#x7528;pg&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x7684;&#x5927;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x4F9D;&#x7136;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E3B;&#x610F;,&#x6570;&#x636E;&#x5E93;&#x8D44;&#x6E90;&#x5B9D;&#x8D35;,&#x66F4;&#x52A0;&#x9002;&#x5408;&#x5B58;&#x50A8;&#x90A3;&#x4E9B;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x51FA;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x624B;&#x6BB5;,&#x5982;&#x679C;&#x53EA;&#x662F;&#x60F3;&#x8981;&#x5B58;&#x50A8;&#x624B;&#x6BB5;,mongodb&#x7684;gridfs,nfs&#x6216;&#x8005;hdfs&#x6216;&#x8BB8;&#x662F;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;</p>
+<p>&#x66F4;&#x591A;&#x7684;&#x65F6;&#x5019;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5BC6;&#x94A5;,&#x52A0;&#x5BC6;&#x4FE1;&#x606F;,&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x538B;&#x7F29;&#x6570;&#x636E;,&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x7B49;.</p>
+<p>SQL&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E32;&#x7C7B;&#x578B;&#x53EB;&#x505A;BLOB&#x6216;&#x8005;BINARY LARGE OBJECT.&#x5176;&#x8F93;&#x5165;&#x683C;&#x5F0F;&#x548C;bytea&#x4E0D;&#x540C;,&#x4F46;&#x662F;&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x548C;&#x64CD;&#x4F5C;&#x7B26;&#x5927;&#x591A;&#x4E00;&#x6837;.</p>
+<h4 id="bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><a name="bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>bytea&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;</h4>
+<p>bytea&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;.&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5305;&#x542B;bytea&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#x7684;&#x8868;</p>
+<pre><code class="lang-PostgreSQL">CREATE TABLE IF NOT EXISTS bytesa_test(
+   a int4 PRIMARY KEY,
+   b bytea
+)
+</code></pre>
+<h4 id="bytea&#x7684;&#x8F93;&#x5165;"><a name="bytea&#x7684;&#x8F93;&#x5165;" class="anchor-navigation-ex-anchor" href="#bytea&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bytea&#x7684;&#x8F93;&#x5165;" class="plugin-anchor" href="#bytea&#x7684;&#x8F93;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>bytea&#x7684;&#x8F93;&#x5165;</h4>
+<p>bytea&#x7684;&#x8F93;&#x5165;&#x901A;&#x5E38;&#x4F7F;&#x7528;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F62;&#x5F0F;.</p>
+<pre><code class="lang-PostgreSQL">INSERT INTO bytesa_test (a,b) VALUES 
+(1,
+ E&apos;\\xDEADBEEF&apos;
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">select b::text from bytesa_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>b         </th></tr>
+</thead>
+<tbody>
+<tr><td>\xdeadbeef</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="&#x5E8F;&#x5217;"><a name="&#x5E8F;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. &#x5E8F;&#x5217;</h3>
+<p>&#x5E8F;&#x5217;&#x662F;pg&#x4E2D;&#x7684;&#x7279;&#x8272;&#x7C7B;&#x578B;,&#x5B83;&#x7C7B;&#x4F3C;python&#x4E2D;&#x7684;counter&#x751F;&#x6210;&#x5668;,&#x4F1A;&#x4E00;&#x6B21;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;,&#x4E0B;&#x6B21;&#x629B;&#x51FA;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x503C;&#x52A0;1,pg&#x4E2D;&#x6CA1;&#x6709;&#x81EA;&#x589E;&#x5173;&#x952E;&#x5B57;,&#x5E8F;&#x5217;&#x5C31;&#x6210;&#x4E86;&#x81EA;&#x589E;&#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6848;,&#x56E0;&#x6B64;&#x5F88;&#x591A;&#x9700;&#x8981;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x7684;&#x8868;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;.</p>
+<p>pg&#x652F;&#x6301;&#x7684;&#x5E8F;&#x5217;&#x7C7B;&#x578B;&#x6309;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x5206;&#x4E3A;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</th>
+<th>&#x8303;&#x56F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>smallserial(<code>serial2</code>)</td>
+<td>&#x81EA;&#x52A8;&#x589E;&#x52A0;&#x7684;&#x5C0F;&#x6574;&#x6570;</td>
+<td>2&#x5B57;&#x8282;</td>
+<td>1&#x5230;32767</td>
+</tr>
+<tr>
+<td>serial(<code>serial4</code>)</td>
+<td>&#x81EA;&#x52A8;&#x589E;&#x52A0;&#x7684;&#x6574;&#x6570;</td>
+<td>4&#x5B57;&#x8282;</td>
+<td>1&#x5230;2147483647</td>
+</tr>
+<tr>
+<td>bigserial(<code>serial8</code>)</td>
+<td>&#x81EA;&#x52A8;&#x589E;&#x957F;&#x7684;&#x5927;&#x6574;&#x6570;</td>
+<td>8&#x5B57;&#x8282;</td>
+<td>1&#x5230;9223372036854775807</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><a name="&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E8F;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;</h4>
+<p>&#x5E8F;&#x5217;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;.&#x5E76;&#x4E14;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x7ED9;&#x5B83;&#x8D4B;&#x503C;</p>
+<pre><code class="lang-PostgreSQL">CREATE TABLE IF NOT EXISTS serial_test(
+    a serial4 PRIMARY KEY,
+    b text
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">INSERT INTO serial_test (b) VALUES 
+(
+ &apos;&#x6D4B;&#x8BD5;&apos;
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">INSERT INTO serial_test (b) VALUES 
+(
+ &apos;&#x6D4B;&#x8BD5;&#x6D4B;&#x8BD5;&apos;
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">select * from serial_test
+</code></pre>
+<pre><code>2 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th>b       </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td>&#x6D4B;&#x8BD5;    </td></tr>
+<tr><td style="text-align: right;">  2</td><td>&#x6D4B;&#x8BD5;&#x6D4B;&#x8BD5;</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="bitmap"><a name="bitmap" class="anchor-navigation-ex-anchor" href="#bitmap"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. bitmap</h3>
+<p>bitmap&#x53C8;&#x53EB;&#x4F4D;&#x4E32;,&#x5373;&#x4E00;&#x4E32;0/1&#x7EC4;&#x6210;&#x7684;&#x5E8F;&#x5217;.&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x505A;&#x6807;&#x8BC6;&#x7B26;&#x6216;&#x8005;&#x53BB;&#x91CD;,&#x8457;&#x540D;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F4D;&#x4E32;&#x5B9E;&#x73B0;.</p>
+<p>&#x5728;pg&#x4E2D;&#x53C8;&#x4E24;&#x79CD;bitmap</p>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bit(<code>bit(n)</code>)</td>
+<td>&#x6570;&#x636E;&#x5FC5;&#x987B;&#x51C6;&#x786E;&#x5339;&#x914D;&#x957F;&#x5EA6;n.</td>
+</tr>
+<tr>
+<td>bit varying(<code>varbit(n)</code>)</td>
+<td>&#x6570;&#x636E;&#x662F;&#x6700;&#x957F;n&#x7684;&#x53D8;&#x957F;&#x7C7B;&#x578B;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x7528;bit&#x7684;&#x6BD4;&#x8F83;&#x591A;</p>
+<h4 id="&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><a name="&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F4D;&#x4E32;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;</h4>
+<p>&#x4F4D;&#x4E32;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>&#x7C7B;&#x578B;&#x5173;&#x952E;&#x5B57;(n)</code>&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;.</p>
+<pre><code class="lang-PostgreSQL">CREATE TABLE IF NOT EXISTS varbit_test(
+    a serial4 PRIMARY KEY,
+    b varbit(10)
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">INSERT INTO varbit_test (b) VALUES 
+(
+ B&apos;101&apos;
+)
+</code></pre>
+<pre><code class="lang-PostgreSQL">select * from varbit_test
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  a</th><th style="text-align: right;">  b</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">  1</td><td style="text-align: right;">101</td></tr>
+</tbody>
+</table>
+
+
+<p>&#x5E38;&#x89C1;&#x7684;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;<a href="http://www.postgres.cn/docs/10/functions-bitstring.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>.&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x6709;:</p>
+<blockquote>
+<p><code>get_bit(column,index)</code>&#x53D6;&#x4F4D;</p>
+</blockquote>
+<pre><code class="lang-PostgreSQL">select get_bit(b,2) from varbit_test where a=1
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  get_bit</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">        1</td></tr>
+</tbody>
+</table>
+
+
+<blockquote>
+<p><code>set_bit(column,index,value)</code>&#x5B58;&#x4F4D;</p>
+</blockquote>
+<pre><code class="lang-PostgreSQL">UPDATE varbit_test SET b = (
+    SELECT set_bit(b,2,0)
+    FROM varbit_test
+    WHERE a=1
+)
+where a=1
+</code></pre>
+<pre><code class="lang-PostgreSQL">select get_bit(b,2) from varbit_test where a=1
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th style="text-align: right;">  get_bit</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">        0</td></tr>
+</tbody>
+</table>
+
+
+<blockquote>
+<p><code>&amp;,|,#,~</code>&#x6309;&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x64CD;&#x4F5C;,&#x5206;&#x522B;&#x662F;&#x4E0E;,&#x6216;,&#x5F02;&#x6216;,&#x975E;</p>
+</blockquote>
+<p>&#x7528;&#x4ED6;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x4E86;,&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#x5C31;&#x662F;<code>&#x539F;&#x6570;&#x636E;|&#x6743;&#x9650;</code>,&#x5220;&#x9664;&#x6743;&#x9650;&#x5C31;&#x662F;<code>&#x539F;&#x6570;&#x636E;&amp;~&#x6743;&#x9650;</code>,&#x68C0;&#x67E5;&#x6743;&#x9650;&#x5C31;&#x662F;&#x7528;<code>&#x539F;&#x6570;&#x636E;&amp;&#x6743;&#x9650;==&#x6743;&#x9650;</code></p>
+<pre><code class="lang-PostgreSQL">SELECT
+    CASE WHEN b&amp; B&apos;101&apos; =  B&apos;101&apos; THEN &apos;true&apos; 
+        ELSE &apos;false&apos;
+    END AS result
+FROM varbit_test 
+WHERE a=1
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>false   </td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">SELECT
+    CASE WHEN b&amp; B&apos;101&apos; =  B&apos;100&apos; THEN &apos;true&apos; 
+        ELSE &apos;false&apos;
+    END AS result
+FROM varbit_test 
+WHERE a=1
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result  </th></tr>
+</thead>
+<tbody>
+<tr><td>true    </td></tr>
+</tbody>
+</table>
+
+
+<h3 id="money"><a name="money" class="anchor-navigation-ex-anchor" href="#money"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.6. money</h3>
+<p>&#x8D27;&#x5E01;&#x7C7B;&#x578B;&#x4E5F;&#x662F;pg&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x6570;&#x503C;&#x7C7B;&#x578B;,&#x5B83;&#x5360;&#x7528;8 bytes,&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A;<code>-92233720368547758.08&#x5230;+92233720368547758.07</code>.&#x6570;&#x636E;&#x7C7B;&#x578B;numeric,int&#x548C;bigint&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x88AB;&#x9020;&#x578B;&#x6210;money.&#x4ECE;&#x6570;&#x636E;&#x7C7B;&#x578B;real&#x548C;double precision&#x7684;&#x8F6C;&#x6362;&#x5219;&#x5FC5;&#x987B;&#x5148;&#x9020;&#x578B;&#x6210;numeric&#x518D;&#x6784;&#x9020;&#x4E3A;money.money&#x7684;&#x8F93;&#x51FA;&#x9ED8;&#x8BA4;&#x4E3A;&#x7F8E;&#x5143;&#x7B26;&#x53F7;.</p>
+<p>&#x6267;&#x884C;&#x6574;&#x6570;&#x503C;&#x5BF9;money&#x503C;&#x7684;&#x9664;&#x6CD5;&#x65F6;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x5C06;&#x622A;&#x65AD;&#x4E3A;&#x96F6;.&#x4E3A;&#x4E86;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x7684;&#x7ED3;&#x679C;,&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9664;&#x4EE5;&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x503C;,&#x6216;&#x8005;&#x5728;&#x9664;&#x6CD5;&#x8BA1;&#x7B97;&#x4E4B;&#x524D;&#x5C06;money&#x503C;&#x8F6C;&#x6362;&#x4E3A;numeric,&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x5230;money.(&#x540E;&#x8005;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x7CBE;&#x786E;&#x5EA6;&#x635F;&#x5931;&#x7684;&#x98CE;&#x9669;)&#x5F53;&#x4E00;&#x4E2A;money&#x503C;&#x88AB;&#x53E6;&#x4E00;&#x4E2A;money&#x503C;&#x9664;&#x65F6;,&#x7ED3;&#x679C;&#x662F;double precision(&#x5373;&#x4E00;&#x4E2A;&#x7EAF;&#x6570;&#x5B57;,&#x800C;&#x4E0D;&#x662F;&#x91D1;&#x989D;).</p>
+<pre><code class="lang-PostgreSQL">SELECT &apos;12.34&apos;::float8::numeric::money
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>money  </th></tr>
+</thead>
+<tbody>
+<tr><td>$12.34 </td></tr>
+</tbody>
+</table>
+
+
+<h3 id="uuid"><a name="uuid" class="anchor-navigation-ex-anchor" href="#uuid"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.7. uuid</h3>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x578B;&#x7684;&#x6269;&#x5C55;,&#x5B58;&#x50A8;&#x7B26;&#x5408;RFC 4122,ISO/IEC 9834-8:2005&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x7684;&#x901A;&#x7528;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;(UUID).uuid&#x5E38;&#x7528;&#x4F5C;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;,&#x5B83;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x6BD4;&#x8F83;&#x5927;,&#x7D22;&#x5F15;&#x6548;&#x7387;&#x4E5F;&#x6BD4;&#x8F83;&#x4F4E;&#x4F46;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x4E0D;&#x4F1A;&#x91CD;&#x590D;.</p>
+<p>uuid&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x5206;&#x8868;&#x6216;&#x8005;&#x5206;&#x5E03;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x505A;&#x552F;&#x4E00;&#x6027;&#x7EA6;&#x675F;(&#x6216;&#x8005;&#x4E3B;&#x952E;),&#x4F46;&#x7528;&#x5B83;&#x505A;hash&#x6765;&#x5206;&#x8868;&#x5C31;&#x5F88;&#x4E0D;&#x5408;&#x9002;,&#x4E00;&#x822C;&#x7528;&#x5B83;&#x505A;&#x552F;&#x4E00;&#x6027;&#x7EA6;&#x675F;&#x7684;&#x60C5;&#x51B5;&#x66F4;&#x591A;&#x7684;&#x662F;&#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x65E5;&#x671F;&#x4F5C;&#x4E3A;&#x5206;&#x8868;&#x7684;key.</p>
+<p>pg&#x4E2D;&#x652F;&#x6301;&#x7528;&#x5982;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x8F93;&#x5165;uuid:</p>
+<ul>
+<li><code>a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11</code></li>
+<li><code>A0EEBC99-9C0B-4EF8-BB6D-6BB9BD380A11</code></li>
+<li><code>{a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11}</code></li>
+<li><code>a0eebc999c0b4ef8bb6d6bb9bd380a11</code></li>
+<li><code>a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11</code></li>
+<li><code>{a0eebc99-9c0b4ef8-bb6d6bb9-bd380a11}</code></li>
+</ul>
+<pre><code class="lang-PostgreSQL">select &apos;{a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11}&apos;::uuid
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>uuid                                </th></tr>
+</thead>
+<tbody>
+<tr><td>a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="&#x7F51;&#x7EDC;&#x5730;&#x5740;"><a name="&#x7F51;&#x7EDC;&#x5730;&#x5740;" class="anchor-navigation-ex-anchor" href="#&#x7F51;&#x7EDC;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.8. &#x7F51;&#x7EDC;&#x5730;&#x5740;</h3>
+<p>PG&#x63D0;&#x4F9B;&#x7528;&#x4E8E;&#x5B58;&#x50A8; IPv4/IPv6 &#x548C; MAC &#x5730;&#x5740;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x7528;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x6BD4;&#x7528;&#x7EAF;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x597D;,&#x56E0;&#x4E3A;pg&#x4E3A;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x63D0;&#x4F9B;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#x68C0;&#x67E5;&#x4EE5;&#x53CA;<a href="http://www.postgres.cn/docs/10/functions-net.html" target="_blank">&#x7279;&#x6B8A;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x548C;&#x51FD;&#x6570;</a>.</p>
+<p>pg&#x652F;&#x6301;&#x7684;&#x7C7B;&#x578B;&#x5305;&#x62EC;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x5B57;</th>
+<th>&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cidr</td>
+<td>7&#x6216;19&#x5B57;&#x8282;</td>
+<td>IPv4&#x548C;IPv6&#x7F51;&#x7EDC;</td>
+</tr>
+<tr>
+<td>inet</td>
+<td>7&#x6216;19&#x5B57;&#x8282;</td>
+<td>IPv4&#x548C;IPv6&#x4E3B;&#x673A;&#x4EE5;&#x53CA;&#x7F51;&#x7EDC;</td>
+</tr>
+<tr>
+<td>macaddr</td>
+<td>6&#x5B57;&#x8282;</td>
+<td>MAC&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>macaddr8</td>
+<td>8 &#x5B57;&#x8282;</td>
+<td>MAC &#x5730;&#x5740;(EUI-64 &#x683C;&#x5F0F;)</td>
+</tr>
+</tbody>
+</table>
+<p>net&#x548C;cidr&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x7684;&#x672C;&#x8D28;&#x533A;&#x522B;&#x662F;inet&#x63A5;&#x53D7;&#x53F3;&#x8FB9;&#x6709;&#x975E;&#x96F6;&#x4F4D;&#x7684;&#x7F51;&#x7EDC;&#x63A9;&#x7801;,&#x800C;cidr&#x4E0D;&#x63A5;&#x53D7;. &#x4F8B;&#x5982;<code>192.168.0.1/24</code>&#x5BF9;inet&#x6765;&#x8BF4;&#x662F;&#x6709;&#x6548;&#x7684;,&#x4F46;&#x662F;cidr&#x6765;&#x8BF4;&#x662F;&#x65E0;&#x6548;&#x7684;</p>
+<pre><code class="lang-PostgreSQL">select &apos;192.168.0.1/24&apos;::inet
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>inet          </th></tr>
+</thead>
+<tbody>
+<tr><td>192.168.0.1/24</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select &apos;192.168.0.1&apos;::inet
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>inet       </th></tr>
+</thead>
+<tbody>
+<tr><td>192.168.0.1</td></tr>
+</tbody>
+</table>
+
+
+
+<pre><code class="lang-PostgreSQL">select &apos;192.168.0.1&apos;::cidr
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>cidr          </th></tr>
+</thead>
+<tbody>
+<tr><td>192.168.0.1/32</td></tr>
+</tbody>
+</table>
+
+
+<h3 id="&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;"><a name="&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.9. &#x6587;&#x672C;&#x641C;&#x7D22;&#x7C7B;&#x578B;</h3>
+<p>PostgreSQL&#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x5B83;&#x4EEC;&#x88AB;&#x8BBE;&#x8BA1;&#x7528;&#x6765;&#x652F;&#x6301;&#x5168;&#x6587;&#x641C;&#x7D22;,&#x5168;&#x6587;&#x641C;&#x7D22;&#x662F;&#x4E00;&#x79CD;&#x5728;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x7684;&#x6587;&#x6863;&#x96C6;&#x5408;&#x4E2D;&#x641C;&#x7D22;&#x4EE5;&#x5B9A;&#x4F4D;&#x90A3;&#x4E9B;&#x6700;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x7684;&#x6587;&#x6863;&#x7684;&#x6D3B;&#x52A8;.tsvector&#x7C7B;&#x578B;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4E3A;&#x6587;&#x672C;&#x641C;&#x7D22;&#x4F18;&#x5316;&#x7684;&#x5F62;&#x5F0F;&#x4E0B;&#x7684;&#x6587;&#x6863;,tsquery&#x7C7B;&#x578B;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x67E5;&#x8BE2;.&#x5168;&#x6587;&#x641C;&#x7D22;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x5355;&#x72EC;&#x8BF4;</p>
+<h3 id="&#x51E0;&#x4F55;&#x56FE;&#x5F62;"><a name="&#x51E0;&#x4F55;&#x56FE;&#x5F62;" class="anchor-navigation-ex-anchor" href="#&#x51E0;&#x4F55;&#x56FE;&#x5F62;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.10. &#x51E0;&#x4F55;&#x56FE;&#x5F62;</h3>
+<p>pg&#x7684;&#x4E00;&#x5927;&#x7279;&#x8272;&#x5C31;&#x662F;&#x5BF9;&#x51E0;&#x4F55;&#x56FE;&#x5F62;&#x6570;&#x636E;&#x7684;&#x652F;&#x6301;,&#x5B83;&#x652F;&#x6301;&#x7684;&#x56FE;&#x5F62;&#x5305;&#x62EC;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;&#x540D;</th>
+<th>&#x5B58;&#x50A8;&#x5C3A;&#x5BF8;</th>
+<th>&#x56FE;&#x5F62;</th>
+<th>&#x8F93;&#x5165;&#x5F62;&#x5F0F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>point</td>
+<td>16&#x5B57;&#x8282;</td>
+<td>&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x70B9;</td>
+<td><code>(x,y)</code></td>
+</tr>
+<tr>
+<td>line</td>
+<td>32&#x5B57;&#x8282;</td>
+<td>&#x65E0;&#x9650;&#x957F;&#x7684;&#x7EBF;&#x5373;<code>y=-(A/B)*x-(C/B)</code></td>
+<td><code>{A,B,C}</code></td>
+</tr>
+<tr>
+<td>lseg</td>
+<td>32&#x5B57;&#x8282;</td>
+<td>&#x6709;&#x9650;&#x7EBF;&#x6BB5;</td>
+<td><code>((x1,y1),(x2,y2))</code></td>
+</tr>
+<tr>
+<td>box</td>
+<td>32&#x5B57;&#x8282;</td>
+<td>&#x77E9;&#x5F62;&#x6846;</td>
+<td><code>((x1,y1),(x2,y2))</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>16+16n&#x5B57;&#x8282;</td>
+<td>&#x5C01;&#x95ED;&#x8DEF;&#x5F84;(&#x7C7B;&#x4F3C;&#x4E8E;&#x591A;&#x8FB9;&#x5F62;)</td>
+<td><code>((x1,y1),...)</code></td>
+</tr>
+<tr>
+<td>path</td>
+<td>16+16n&#x5B57;&#x8282;</td>
+<td>&#x5F00;&#x653E;&#x8DEF;&#x5F84;</td>
+<td><code>[(x1,y1),...]</code></td>
+</tr>
+<tr>
+<td>polygon</td>
+<td>40+16n&#x5B57;&#x8282;</td>
+<td>&#x591A;&#x8FB9;&#x5F62;(&#x7C7B;&#x4F3C;&#x4E8E;&#x5C01;&#x95ED;&#x8DEF;&#x5F84;)</td>
+<td><code>((x1,y1),...)</code></td>
+</tr>
+<tr>
+<td>circle</td>
+<td>24&#x5B57;&#x8282;</td>
+<td>&#x5706;,&#x5373;&#x4EE5;<code>(x,y)</code>&#x4E3A;&#x5706;&#x5FC3;,<code>r</code>&#x4E3A;&#x534A;&#x5F84;&#x7684;&#x5706;</td>
+<td><code>&lt;(x,y),r&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>&#x540C;&#x65F6;&#x51E0;&#x4F55;&#x56FE;&#x5F62;&#x95F4;pg&#x6709;<a href="http://www.postgres.cn/docs/10/functions-geometry.html" target="_blank">&#x76F8;&#x5E94;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x51FD;&#x6570;</a>.&#x51E0;&#x4F55;&#x56FE;&#x5F62;&#x64CD;&#x4F5C;&#x65F6;pg&#x5728;&#x5730;&#x7406;&#x4FE1;&#x606F;&#x6570;&#x636E;&#x9886;&#x57DF;&#x5E94;&#x7528;&#x7684;&#x57FA;&#x7840;.&#x540E;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</p>
+<pre><code class="lang-PostgreSQL">select  &apos;((0,0),(1,1))&apos;::box +  &apos;(2.0,0)&apos;::point as result
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>result     </th></tr>
+</thead>
+<tbody>
+<tr><td>(3,1),(2,0)</td></tr>
+</tbody>
+</table>
+
+
+<h2 id="&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x7C7B;&#x578B;&#x8F6C;&#x6362;</h2>
+<p>pg&#x662F;&#x5F3A;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5E93;,&#x591A;&#x6570;&#x65F6;&#x5019;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x7684;&#x4F7F;&#x7528;<code>::</code>&#x505A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;,&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x6709;&#x6F14;&#x793A;.<code>::</code>&#x53EF;&#x4EE5;&#x505A;&#x94FE;&#x5F0F;&#x8F6C;&#x6362;.</p>
+<pre><code class="lang-PostgreSQL">select &apos;12.32&apos;::float8::numeric::money
+</code></pre>
+<pre><code>1 row(s) returned.
+</code></pre><table>
+<thead>
+<tr><th>money  </th></tr>
+</thead>
+<tbody>
+<tr><td>$12.32 </td></tr>
+</tbody>
+</table>
+
+
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-01-06 23:43:24
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 特色功能">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="递归查询.html" class="navigation navigation-next " aria-label="Next page: 递归查询">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"复杂数据类型及类型转换","level":"1.2.1.1.1.1.1","depth":6,"next":{"title":"递归查询","level":"1.2.1.1.1.1.2","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/递归查询.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/递归查询.md","articles":[]},"previous":{"title":"特色功能","level":"1.2.1.1.1.1","depth":5,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/README.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/README.md","articles":[{"title":"复杂数据类型及类型转换","level":"1.2.1.1.1.1.1","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/复杂数据类型及类型转换.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/复杂数据类型及类型转换.md","articles":[]},{"title":"递归查询","level":"1.2.1.1.1.1.2","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/递归查询.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/递归查询.md","articles":[]},{"title":"事件监听","level":"1.2.1.1.1.1.3","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/事件监听.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/事件监听.md","articles":[]},{"title":"物化视图","level":"1.2.1.1.1.1.4","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/物化视图.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/物化视图.md","articles":[]},{"title":"表继承","level":"1.2.1.1.1.1.5","depth":6,"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/表继承.md","ref":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/表继承.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"http://blog.hszofficial.site/TutorialForDataScience/"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"title":"","button":"赏","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","wechatText":"微信打赏","alipayText":"支付宝打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForDataScience/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"showLevelIcon":false,"mode":"float","pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"level1Icon":"","showLevel":true,"level2Icon":"","level3Icon":"","associatedWithSummary":true,"float":{"showLevelIcon":true,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"printLog":false,"showGoTop":true,"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPython","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍数据科学相关的工具和惯用工作流等相关知识"},"file":{"path":"工具链篇/存储工具/使用postgresql做数据存储/功能与特性/特色功能/复杂数据类型及类型转换.md","mtime":"2020-01-06T15:43:24.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-06T15:49:53.434Z"},"basePath":"../../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
