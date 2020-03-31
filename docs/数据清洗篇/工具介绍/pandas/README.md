@@ -1,0 +1,9 @@
+# Pandas
+
+Pandas是python上最通用的Dataframe数据结构实现,所谓DataFrame是一种带有行和列的二维数据,常用于数据分析任务.
+
+pandas基于NumPy,纳入了大量库和一些标准的数据模型,提供了高效地操作大型数据集所需的工具,是使Python成为强大而高效的数据分析环境的重要因素之一.
+
+它最初由AQRCapital Management于2008年4月开发,并于2009年底开源出来,目前由专注于Python数据包开发的PyData开发team继续开发和维护,属于PyData项目的一部分.Pandas最初被作为金融数据分析工具而开发出来,因此pandas为时间序列分析提供了很好的支持,只是其特色之一.Pandas的名称来自于面板数据(panel data)和python数据分析(data analysis).
+
+在数据清洗过程中Pandas十分好用,因为它内置了最常用的清洗接口.
