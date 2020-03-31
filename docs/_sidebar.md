@@ -75,7 +75,6 @@
                     * [更加优雅的输出打印结果](数据分析篇/工具介绍/SymPy/输出/更加优雅的输出打印结果/更加优雅的输出打印结果.md)
                     * [画图](数据分析篇/工具介绍/SymPy/输出/画图/画图.md)
             * [python标准库中的计算工具](数据分析篇/工具介绍/python标准库中的计算工具/使用标准库处理基本数学问题.md)
-
             * [numpy和scipy](数据分析篇/工具介绍/numpy和scipy/README.md)
                 * [numpy的高性能同构定长多维数组](数据分析篇/工具介绍/numpy和scipy/numpy的高性能同构定长多维数组/numpy的高性能同构定长多维数组.md)
                 * [universal_function](数据分析篇/工具介绍/numpy和scipy/universal_function/universal_function.md)
@@ -87,7 +86,7 @@
                 * [窗口函数与卷积](数据分析篇/工具介绍/numpy和scipy/窗口函数与卷积/窗口函数与卷积.md)
                 * [财务分析](数据分析篇/工具介绍/numpy和scipy/财务分析.md)
     
-    * 数据挖掘篇
+    * [数据挖掘篇](数据可视化篇/README.md)
         * 工具介绍
 
     * [数据可视化篇](数据可视化篇/README.md)
