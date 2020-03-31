@@ -76,7 +76,6 @@
                     * [画图](数据分析篇/工具介绍/SymPy/输出/画图/画图.md)
 
             * [python标准库中的计算工具](数据分析篇/工具介绍/python标准库中的计算工具/使用标准库处理基本数学问题.md)
-             
             * [numpy和scipy](数据分析篇/工具介绍/numpy和scipy/README.md)
                 * [numpy的高性能同构定长多维数组](数据分析篇/工具介绍/numpy和scipy/numpy的高性能同构定长多维数组/numpy的高性能同构定长多维数组.md)
                 * [universal_function](数据分析篇/工具介绍/numpy和scipy/universal_function/universal_function.md)
@@ -90,6 +89,7 @@
     
 
     * 数据挖掘篇
+        * 工具介绍
 
     * [数据可视化篇](数据可视化篇/README.md)
         * 用于分析过程中的可视化
