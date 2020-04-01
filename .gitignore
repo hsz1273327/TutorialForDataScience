@@ -14,3 +14,4 @@
 assets
 bin
 influxdb
+node_modules
