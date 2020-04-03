@@ -1,0 +1,14 @@
+syntax = "proto3";
+package hsz.foo.search_request;
+option go_package = "hsz_foo/schema_pb";
+import public "corpus.proto";
+message SearchRequest {
+    string query = 1;
+    int32 page_number = 2;
+    int32 result_per_page = 3;
+    hsz.foo.corpus.Corpus corpus = 4;
+    repeated int32 uids = 5;
+    map<string, float> weight =6;
+  }
+
+  
