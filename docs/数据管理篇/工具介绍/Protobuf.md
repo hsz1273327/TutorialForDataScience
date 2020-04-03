@@ -53,7 +53,6 @@ python|无效|---|---
 golang|变成golang的模块|`option go_package = "{go语言的模块名}";`|`--go_opt=paths=source_relative`用于将`-I`指定的目录下的目录结构映射到编译的输出中
 js|无效|---|`--js_out=import_style={模块形式}:{输出位置}`用于规定使用的模块形式,一般使用`commonjs,binary`配置|---
 
-
 ### 模块导入声明
 
 Protobuf也支持模块导入,其语法与java类似.我们可以使用`import`语句声明导入模块.
