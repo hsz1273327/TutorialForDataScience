@@ -9,7 +9,8 @@
         * [数据的监控](数据管理篇/数据的监控.md)
         * 工具介绍
             * [JSON](数据管理篇/工具介绍/JSON.md)
-            * [Protobuffer](数据管理篇/工具介绍/Protobuffer.md)
+            * [JSONSchema](数据管理篇/工具介绍/JSONSchema.md)
+            * [Protobuf](数据管理篇/工具介绍/Protobuf.md)
 
     * [数据采集篇](数据采集篇/README.md)
         * [埋点数据采集](数据采集篇/埋点数据采集.md)
