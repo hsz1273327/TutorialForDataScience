@@ -15,6 +15,8 @@
 
 可以看到`Protobuf`之所以可以性能优异主要取决于`1 -> 2`这个步骤,这个步骤固定好了数据的schema,这样序列化出来的数据就不再需要包含schema中的数据比如字段名这些信息了,这就可以省很多空间.
 
+本文的例子会具体介绍我常用的编程语言如何使用protobuf,代码在分支[]()上,可以下载下来试试.
+
 ## Protobuf基本格式
 
 Protobuf的设计很大程度上是参考cpp的, 主要结构可以描述为:
@@ -45,11 +47,12 @@ package foo.bar;
 
 由于不同的编程语言模块化的实现方式是不同的,因此编译后这个声明在不同编程语言中的结果是不一致的.
 
-编程语言|结果描述
----|---
-python|无效|
-golang|变成golang的模块|
-js|无效|
+编程语言|结果描述|额外的申明项|额外的编译项
+---|---|---|---
+python|无效|---|---
+golang|变成golang的模块|`option go_package = "{go语言的模块名}";`|`--go_opt=paths=source_relative`用于将`-I`指定的目录下的目录结构映射到编译的输出中
+js|无效|---|`--js_out=import_style={模块形式}:{输出位置}`用于规定使用的模块形式,一般使用`commonjs,binary`配置|---
+
 
 ### 模块导入声明
 
@@ -148,6 +151,19 @@ message SearchRequest {
 
 在消息定义中，我们使用一行语句声明一个字段的信息.其中左值部分需要声明字段的类型和字段名;每个字段都有唯一的右值作为数字标识符.这些标识符是用来在消息的二进制格式中识别各个字段的,一旦开始使用就不能够再改变.1到15之内的标识号在编码的时候会占用一个字节;16到2047之内的标识号则占用2个字节.所以应该为那些频繁出现的消息元素保留1到15之内的标识号.最小的标识号可以从1开始,最大到2的29次方-1,但不可以使用其中的19000到19999之间的标识号,Protobuf协议实现中对这些进行了预留.
 
+### 特殊类型Any
+
+Any类型消息允许你在没有指定他们的.proto定义的情况下使用message作为一个嵌套类型.一个Any类型包括一个可以被序列化bytes类型的任意消息以及一个URL作为一个全局标识符和解析消息类型.为了使用Any类型需要导入`google/protobuf/any.proto`模块
+
+```proto
+import "google/protobuf/any.proto";
+
+message ErrorStatus {
+  string message = 1;
+  repeated google.protobuf.Any details = 2;
+}
+```
+
 ### Protobuf中的容器结构
 
 Protobuf中支持两种容器结构:
@@ -155,26 +171,42 @@ Protobuf中支持两种容器结构:
 + `repeated {value_type}`关键字用于声明同构不定长序列
 + `map<{key_type}, {value_type}>`关键字用于声明映射
 
-### Protobuf中的schema限制
+这两种容器的使用方式和类型一样,这边就不再重复介绍
 
+### Oneof限制
+
+如果你的消息中有很多可选字段,并且同时至多一个字段会被设置,你可以加强这个行为使用`oneof`特性节省内存.
+
+Oneof字段就像可选字段,除了它们会共享内存,至多一个字段会被设置.这一特性类似C语言中的`union`共用体.你可以查看不同语言的接口使用类似`case()`或者`WhichOneof()`方法检查哪个oneof字段被设置.
+
+```proto
+message SampleMessage {
+  oneof test_oneof {
+    string name = 4;
+    SubMessage sub_message = 9;
+  }
+}
+```
+
+需要注意在`oneof`字段中能使用`repeated`关键字
 
 ## 编译Protobuf
 
 通常我们使用[protoc](https://developers.google.com/protocol-buffers/docs/downloads)来编译`.proto`文件到指定的编程语言,其基本形式是
 
 ```bash
-protoc -I={.proto文件所在文件夹}[ -I={.proto文件所在文件夹}...]  --{对应语言}_out=. {目标.proto文件}[ {目标.proto文件}...]
+protoc -I={.proto文件所在文件夹}[ -I={.proto文件所在文件夹}...] \
+--{对应语言}_out={输出的对应语言模块源文件所在文件夹}[ --{对应语言}_out={输出的对应语言模块源文件所在文件夹}...] \
+{目标.proto文件}[ {目标.proto文件}...]
 ```
 
 目前protobuf已经原生支持或者通过插件形式支持了几乎所有主流编程语言.这边只介绍我常用的.
 
-编程语言|依赖插件|命令
----|---|---
-python|---|`protoc -I={.proto文件所在文件夹} --python_out={输出位置} {.proto文件}`
-golang|
-rust|
-javascript|---|`protoc -I={.proto文件所在文件夹} --js_out=import_style=commonjs,binary:{输出位置} {.proto文件}`
-c|
+编程语言|编译依赖插件|编译命令|编程语言导入需要的依赖包
+---|---|---|---
+python|---|`protoc -I={.proto文件所在文件夹} --python_out={输出位置} {.proto文件}`|`protobuf`
+javascript|---|`protoc -I={.proto文件所在文件夹} --js_out=import_style=commonjs,binary:{输出位置} {.proto文件}`|`google-protobuf`
+golang|`google.golang.org/protobuf/cmd/protoc-gen-go`|`protoc -I={.proto文件所在文件夹} --go_out={输出位置} --go_opt=paths=source_relative {.proto文件}`|`github.com/golang/protobuf`
 
 ## Protobuf的性能特点和适用范围
 
