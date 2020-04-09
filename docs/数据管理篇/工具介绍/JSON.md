@@ -14,7 +14,38 @@
 }
 ```
 
+## JSON中的类型
+
 JSON来自于javascript,因此值类型也沿用javascript中的定义.JSON中定义的数据类型包括`boolean`,`string`,`number`,`null`,`array`和`object`.其中`boolean`,`string`,`number`,`null`是最基本的数据类型,而`array`和`object`则是容器结构.广义上来说只要数据是上面的任意一种类型的都是满足定义的JSON数据,但一般JSON数据都是`array`或`object`的形式.需要注意的是和js中不同,`object`键必须是`string`.
+
++ `object`使用`{}`包裹,里面是键值对的形式
+
+    ```json
+    { "key1": "value1", "key2": "value2" }
+    ```
+
++ `array`使用`[]`包裹,里面是成员对象
+
+    ```json
+    [ "first", "second", "third" ]
+    ```
+
++ `number`在JSON中也不区分整数和浮点数
+
+    ```json
+    42
+    3.1415926
+    ```
+
++ `string`在JSON中字符串只能使用`""`包裹
+
+    ```json
+    "This is a string"
+    ```
+
++ `boolean`在JSON中布尔型数据只有两个取值,既`true`和`false`
+
++ `null`在JSON中统一使用`null`表示空值
 
 ## JSON的性能特点和适用范围
 
