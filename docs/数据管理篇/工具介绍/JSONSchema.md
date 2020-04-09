@@ -498,3 +498,15 @@ JSON基本算是为网络而生,JSON Schema也基本上如此,因此很多时候
 }
 ```
 
+然后我们随便写个实例验证下:
+
+```json
+{
+  "name": "asf",
+  "age": 12,
+  "location": {
+    "latitude": 32.2,
+    "longitude": 43
+  }
+}
+```
