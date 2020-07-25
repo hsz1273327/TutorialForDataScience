@@ -1,161 +1,13 @@
-# SQL
+# DDL语句
 
-SQL语言是S为操作数据库而开发的语言,它的规范称为[ANSI-SQL](https://baike.baidu.com/item/ANSI%20SQL/5083565?fr=aladdin),但实时上由于不同数据库的实现不同,几乎没有一款数据库是完全符合这个标准的,因此几乎没法一点不改的将一种数据库使用的sql语句迁移到另一种数据库上使用,但好在基本上语法是相通的,因此这边才能写这部分内容.
+DDL语句是用来创建或者删除存储数据用的数据库以及数据库中的表等对象.DDL包含以下几种指令:
 
-虽然为了应付一些特殊需求有越来越多的nosql数据库出现了,但关系数据库因为其成熟通用依然是各行各业的基石.而关系数据库通用的SQL语言依然是做数据的基础.
 
-## 数据库和数据库管理系统
++ `CREATE`: 创建数据库和表等对象
 
-将数据保存起来通过计算机加工而成的可以进行高效访问的数据集合称为数据库(Database,DB).用来管理数据库的计算机系统称为数据库管理系统(Database Management System,DBMS)
++ `DROP`: 删除数据库和表等对象
 
-数据库一般按存储模型和存储介质来做区分,比如Key-value数据库通常用键值对保存数据,将数据保存在内存种的数据库叫内存数据库.而数据库管理系统则是数据库的交互层,负责将操作者的意图转化为具体操作在数据库上执行.SQL语言就是执行在这个交互层上的编程语言.
-
-## 关系数据库管理系统
-
-关系数据库是现在应用最广泛的数据库.使用行列组成的二维表来管理数据,表与表间以关系建立联系,因此称为关系模型.SQL语言也是关系数据库的专用操作语言
-
-## 关系数据库管理系统种的基本结构
-
-### 数据库
-
-### Schema
-
-数据库业界对于`schema`有多种译法:纲要,模式,方案等等.但各种译法都不能准确直观地表达出其原本的含义--即位于一个独立命名空间内的一组相关数据库对象的集合.
-
-ANSI SQL标准中对`schema`有着明确的定义--`database`的下一层逻辑结构就是`schema`.
-
-如果把database比作一个国家,那么schema 就是一些独立的省,大多数对象是隶属于某个schema的,然后schema又隶属于某个database.
-
-
-### 表
-
-用于存储数据的二维表就是表.表是一类同构数据的集合
-
-### 行
-
-表中的一行表示一条数据.这条数据会以多个维度来描述一个东西.
-
-### 列
-
-表中的一列表示所有数据种特定维度的集合.
-
-### 数据类型
-
-数据类型描述数据特定维度的类型约束,比如年龄的类型一般是int4
-
-### 约束
-
-用于描述数据特定维度一些特殊限制条件的规则就是约束.常见的有主键约束,唯一约束,非空约束等
-
-### 索引
-
-用于快速查找数据的结构
-
-
-### 结构间的关系
-
-打一个这样的比喻:
-
-+ 数据库 => 一个仓库
-
-+ schema => 仓库下的一个房间
-
-+ 表 => 房间里的储物柜
-
-+ 列 => 储物柜里的列
-
-+ 行 => 储物柜里的行
-
-+ data => 就是存储在储物柜里面的物品了
-
-+ 数据类型 => 物品的类别标签
-
-+ 约束 => 准许存放物品的规则
-
-+ 索引 => 物品存放位置的目录
-
-
-## SQL语言的操作目的
-
-SQL根据操作目的可以分为三种:
-
-+ DDL(Data Definition Language,数据定义语言)
-+ DML(Data Manipulation Language,数据操纵语言)
-+ DCL(Data Control Language,数据控制语言)
-
-实际使用的SQL语句当中有90%属于DML,因此DML是sql语言的核心内容.
-
-
-## SQL语言的基本规则
-
-SQL语言是命令式语言,它不会描述数据库要怎么做,只会描述要数据库做什么.SQL语句必须满足如下几点:
-
-### SQL基于英文
-
-SQL语言基于英文,因此**注意使用英文字符和符号**.**单词使用空格分隔**
-
-
-### SQL 语句要以分号;结尾
-
-一条SQL语句可以描述一个数据库操作.在数据库当中SQL语句也是逐条执行的.SQL种使用`;`来辨别一条SQL语句的结束.
-
-### SQL语句不区分大小写
-
-SQL不区分关键字的大小写,例如不管写成`SELECT`还是`select`解释都是一样的,**表名和列名也是如此**.
-
-通常约定俗成的我们会将关键字全部大写,表明首字母大写,其他的则都小写.
-
-需要注意,虽然关键字和表名列名不区分大小写,但数据是区分的.
-
-
-### 常数的书写方式是固定的
-
-SQL语句常常需要直接书写字符串,日期或者数字.在SQL语句中直接书写的字符串,日期或者数字等称为常数.
-
-数字可以直接写不需要任何标识,而字符串,日期等常数则需要使用单引号`'`标识.
-
-### 注释的书写方式
-
-类似其他变成语言,SQL语句中也可以有注释,被注释的部分不会被执行.SQL中有两种注释形式:
-
-+ 单行注释使用`--`
-  ```SQL
-  --这是单行注释
-  ```
-+ 段注释使用`/* */`包裹
-  ```SQL
-  /*
-  这是段注释
-  */
-  ```
-
-
-## 本文的约定
-
-+ 本文使用postgresq 11版本作为sql运行的载体,毕竟pg是对ANSI-SQL支持最好的开源数据库之一.
-
-+ 本文使用[postgres_kernel](https://github.com/bgschiller/postgres_kernel)作为客户端执行例子
-
-+ 本文使用[docker](https://www.docker.com/)部署postgresq,使用默认库`postgres`作为样例库.部署的[docker-compose](https://docs.docker.com/compose/)文件如下:
-
-    ```yml
-    version: '3.6'
-    services:
-      postgres:
-        image: postgres:11
-        logging:
-          options:
-            max-size: "10m"
-            max-file: "3"
-        ports:
-          - 5432:5432
-        environment:
-          POSTGRES_PASSWORD: "postgres"
-    ```
-    
-+ 本文每篇文章都会单独建表,不会存在需要上下文环境的情况,因此在一些章节中会有大段的建表录入数据的操作代码,可能影响阅读流畅性,还请见谅
-
-连接数据库使用如下命令
++ `ALTER`: 修改数据库和表等对象的结构
 
 
 ```PostgreSQL
@@ -168,3 +20,527 @@ SQL语句常常需要直接书写字符串,日期或者数字.在SQL语句中直
 ```
 
     switched autocommit mode to True
+
+## 数据库的创建和删除
+
+数据库的创建使用语句`CREATE DATABASE <数据库名称>;`删除数据库使用`DROP DATABASE`,查看有哪些数据库则可以使用语句`SELECT datname FROM pg_database`
+
+
+```PostgreSQL
+CREATE DATABASE test
+```
+
+
+```PostgreSQL
+SELECT datname FROM pg_database
+```
+
+    4 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>datname  </th></tr>
+</thead>
+<tbody>
+<tr><td>postgres </td></tr>
+<tr><td>template1</td></tr>
+<tr><td>template0</td></tr>
+<tr><td>test     </td></tr>
+</tbody>
+</table>
+
+
+
+```PostgreSQL
+DROP DATABASE test
+```
+
+
+```PostgreSQL
+SELECT datname FROM pg_database
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>datname  </th></tr>
+</thead>
+<tbody>
+<tr><td>postgres </td></tr>
+<tr><td>template1</td></tr>
+<tr><td>template0</td></tr>
+</tbody>
+</table>
+
+
+## schema 的创建和删除
+
+PostgreSQL在创建一个新的database时会自动为其创建一个名为`public`的schema(类似国家之于首都,一省之于省会).如果未设置`search_path`变量,那么 PostgreSQL会将你创建的所有对象默认放入`public schema`中.如果表的数量较少这是没问题的,但如果你有几千张表,那么还是建议将它们分门别类放入不同的 schema中.
+
+> 创建一个schema
+
+创建schema使用语句`CREATE SCHEMA test_schema`
+
+
+```PostgreSQL
+CREATE SCHEMA test_schema
+```
+
+> 查看schema信息
+
+查看database下schema的列表可以使用`SELECT nspname FROM pg_namespace`语句
+
+
+```PostgreSQL
+SELECT nspname FROM pg_namespace
+```
+
+    7 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>nspname           </th></tr>
+</thead>
+<tbody>
+<tr><td>pg_toast          </td></tr>
+<tr><td>pg_temp_1         </td></tr>
+<tr><td>pg_toast_temp_1   </td></tr>
+<tr><td>pg_catalog        </td></tr>
+<tr><td>public            </td></tr>
+<tr><td>information_schema</td></tr>
+<tr><td>test_schema       </td></tr>
+</tbody>
+</table>
+
+
+> 删除schema
+
+与删除database类似的我们也可以删除schema,使用语句`DROP SCHEMA IF EXISTS <schema>`
+
+
+```PostgreSQL
+DROP SCHEMA IF EXISTS test_schema
+```
+
+
+```PostgreSQL
+SELECT nspname FROM pg_namespace
+```
+
+    6 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>nspname           </th></tr>
+</thead>
+<tbody>
+<tr><td>pg_toast          </td></tr>
+<tr><td>pg_temp_1         </td></tr>
+<tr><td>pg_toast_temp_1   </td></tr>
+<tr><td>pg_catalog        </td></tr>
+<tr><td>public            </td></tr>
+<tr><td>information_schema</td></tr>
+</tbody>
+</table>
+
+
+## 表的创建和删除
+
+> 创建表
+
+建表操作非常容易重复表名,为了避免重复我们可以使用命令`IF NOT EXISTS`避免.
+创建表的格式为:
+
+```sql
+CREATE TABLE IF NOT EXISTS [<Schema>.]<表名>(
+    <字段名> <字段类型> [DEFAULT <默认值>} [...<字段约束>]],
+     ...,
+     [...<表约束>]
+)
+```
+默认情况下如果不指名schema,那么表将会建立在`public`这个schema上.
+
+通常我个人不建议将约束和建表混在一起写,而更建议分为创建和定义约束两步,这样更加清晰.
+
+
+```PostgreSQL
+CREATE TABLE IF NOT EXISTS my_test(
+   a text DEFAULT 'a',
+   b text DEFAULT 'b'
+)
+```
+
+> 查看表信息
+
+pg中可以通过语句`SELECT * FROM information_schema.tables WHERE table_schema = '<schema名>';`语句来查看库中有什么表.通常`schema`默认都是`public`,我们通常关心的字段主要是`table_name,table_schema`
+
+
+```PostgreSQL
+SELECT table_name,table_schema FROM information_schema.tables WHERE table_schema = 'public'
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>table_name  </th><th>table_schema  </th></tr>
+</thead>
+<tbody>
+<tr><td>mytest1     </td><td>public        </td></tr>
+<tr><td>my_test     </td><td>public        </td></tr>
+<tr><td>commodity   </td><td>public        </td></tr>
+</tbody>
+</table>
+
+
+而查看表的结构则可以使用语句`SELECT * FROM information_schema.columns WHERE table_name ='<表名>';`通常我们比较关心的是`column_name,column_default,is_nullable,data_type`这几个字段.
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='my_test';
+```
+
+    2 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;a&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+</tbody>
+</table>
+
+
+> 修改表名
+
+修改表名使用语句`ALTER TABLE <旧表名> RENAME TO <新表名> `
+
+
+```PostgreSQL
+ALTER TABLE my_test RENAME TO mytest1
+```
+
+    relation "mytest1" already exists
+    
+
+
+```PostgreSQL
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>table_name  </th></tr>
+</thead>
+<tbody>
+<tr><td>mytest1     </td></tr>
+<tr><td>my_test     </td></tr>
+<tr><td>commodity   </td></tr>
+</tbody>
+</table>
+
+
+### 字段(列)
+
+在创建一个表的时候我们就必须先定义好这个表有什么字段,这些字段分别是什么类型,有什么约束条件制约,有什么默认值,怎么加索引等.
+
+
+比较常见的字段操作是修改字段,修改字段:
+
+> 新增字段
+
+新增字段使用语句`ALTER TABLE <表名> ADD <字段名> <字段类型>....`
+
+
+```PostgreSQL
+ALTER TABLE mytest1 ADD c float
+```
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='mytest1';
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type       </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text            </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text            </td></tr>
+<tr><td>c            </td><td>                </td><td>YES          </td><td>double precision</td></tr>
+</tbody>
+</table>
+
+
+> 修改字段的数据类型
+
+修改字段的数据类型可以使用语句`ALTER TABLE <表名> ALTER COLUMN <字段名> TYPE <类型名>`,数据类型和数据库管理系统的实现有关,不同的数据库管理系统数据类型往往不一样,这不是本文的重点,本文以pg作为运行平台因此使用pg的类型系统,具体可以看[这篇]()
+
+
+```PostgreSQL
+ALTER TABLE mytest1 ALTER COLUMN c TYPE text
+```
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='mytest1';
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+<tr><td>c            </td><td>                </td><td>YES          </td><td>text       </td></tr>
+</tbody>
+</table>
+
+
+> 修改默认值
+
+修改默认值使用语句`ALTER TABLE <表名> ALTER COLUMN <字段名> SET DEFAULT <新默认值>;`
+
+
+```PostgreSQL
+ALTER TABLE mytest1 ALTER COLUMN a SET DEFAULT 'abc'
+```
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='mytest1';
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+<tr><td>c            </td><td>                </td><td>YES          </td><td>text       </td></tr>
+</tbody>
+</table>
+
+
+> 修改字段名
+
+修改字段名可以使用语句`ALTER TABLE <表名> RENAME COLUMN <旧列名> TO <新列名>`
+
+
+
+```PostgreSQL
+ALTER TABLE mytest1 RENAME COLUMN c TO d
+```
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='mytest1';
+```
+
+    3 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+<tr><td>d            </td><td>                </td><td>YES          </td><td>text       </td></tr>
+</tbody>
+</table>
+
+
+> 删除字段
+
+删除字段使用`ALTER TABLE <表名> DROP COLUMN <列名>`
+
+
+```PostgreSQL
+ALTER TABLE mytest1 DROP COLUMN d
+```
+
+
+```PostgreSQL
+SELECT column_name,column_default,is_nullable,data_type FROM information_schema.columns WHERE table_name ='mytest1';
+```
+
+    2 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
+</thead>
+<tbody>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+</tbody>
+</table>
+
+
+### 约束
+
+表中除了字段还有字段间的关系--约束.通常约束包括这么几种:
+
+1. 主键约束,非空约束和唯一约束的结合,确保某列(或两个列多个列的结合)有唯一标识,有助于更容易更快速地找到表中的一个特定的记录.使用
+
+    ```sql
+    ALTER TABLE <表名> ADD CONSTRAINT <约束名> PRIMARY KEY (<...字段名>)
+    ```
+
+    创建,注意一些数据库管理系统是依赖主键的,因此在建表时就一定会有一个主键,比如mysql.
+
+
+2. 唯一约束,确保某列的值都是唯一的,使用
+    ```sql
+    ALTER TABLE <表名> ADD CONSTRAINT <约束名> unique(<字段名>)
+    ```
+    创建
+
+
+3. 非空约束,指示某列不能存储 NULL 值,使用
+
+    ```sql
+    ALTER TABLE <表名> MODIFY <字段名> <字段类型> NOT NULL
+    ```
+    创建
+
+4. 外键约束,保证一个表中的数据匹配另一个表中的值的参照完整性
+
+5. CHECK约束,保证列中的值符合指定的条件,使用
+
+    ```sql
+    ALTER TABLE <表名> ADD CONSTRAINT <约束名> CHECK (<条件>)
+    ```
+
+6. 排他约束,保证如果将任何两行的指定列或表达式使用指定操作符进行比较,至少其中一个操作符比较将会返回 false或空值.使用条件
+    ```sql
+    ALTER TABLE <表名> ADD CONSTRAINT <约束名> EXCLUSION (<条件>)
+    ```
+
+
+pg中删除约束只能删除有名字的约束,使用语句
+
+```sql
+ALTER TABLE <表名> DROP CONSTRAINT <约束名>
+```
+
+## 索引
+
+索引通常和数据库管理系统的实现有关,本文不做具体介绍,这块会在讲postgresql的时候单独介绍,不过多数情况下可以使用语句
+```sql
+CREATE INDEX <索引名> ON <表名> (<列名>[,...<列名>])
+```
+
+## 注释
+
+我们可以在SQL语句中添加注释,当然也可以为表,字段等实体添加注释以方便维护,这在SQL语法中是没有规定的,因此各个数据库管理程序的实现是不一致的,pg中使用`COMMENT ON`语句来管理这种注释.
+
+> 创建表注释
+
+```sql
+COMMENT ON TABLE <表名> IS '<注释内容>';
+```
+
+> 创建列注释
+
+```sql
+COMMENT ON COLUMN <表名>.<列名> IS '<注释内容>';
+```
+> 删除注释
+
+删除注释实际上就是将上面的创建煮熟的注释内容部分填为`NULL`
+
+
+
+```PostgreSQL
+COMMENT ON TABLE mytest1 IS '测试表'
+```
+
+
+```PostgreSQL
+COMMENT ON COLUMN mytest1.a IS '测试字段'
+```
+
+> 查看字段注释
+
+pg中查看字段注释使用如下语句,我们以查看`mytest1`表的字段注释为例
+
+
+```PostgreSQL
+SELECT  
+a.attname as 字段名,  
+col_description(a.attrelid,a.attnum) as 注释,  
+concat_ws('',t.typname,SUBSTRING(format_type(a.atttypid,a.atttypmod) from '\(.*\)')) as 字段类型
+FROM  
+pg_class as c,  
+pg_attribute as a,  
+pg_type as t  
+WHERE  
+c.relname = 'mytest1'  
+and a.atttypid = t.oid  
+and a.attrelid = c.oid  
+and a.attnum>0;
+```
+
+    2 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>字段名  </th><th>注释    </th><th>字段类型  </th></tr>
+</thead>
+<tbody>
+<tr><td>a       </td><td>测试字段</td><td>text      </td></tr>
+<tr><td>b       </td><td>        </td><td>text      </td></tr>
+</tbody>
+</table>
+
+
+> 删除表
+
+删除表使用语句`DROP TABLE IF EXISTS <表名>`
+
+
+```PostgreSQL
+DROP TABLE IF EXISTS mytest1
+```

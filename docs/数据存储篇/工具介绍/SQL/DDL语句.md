@@ -188,35 +188,18 @@ pg中可以通过语句`SELECT * FROM information_schema.tables WHERE table_sche
 SELECT table_name,table_schema FROM information_schema.tables WHERE table_schema = 'public'
 ```
 
-    1 row(s) returned.
+    3 row(s) returned.
     
 
 
 <table>
 <thead>
-<tr><th>table_name  </th></tr>
+<tr><th>table_name  </th><th>table_schema  </th></tr>
 </thead>
 <tbody>
-<tr><td>my_test     </td></tr>
-</tbody>
-</table>
-
-
-
-```PostgreSQL
-SELECT * FROM information_schema.tables WHERE table_schema = 'public'
-```
-
-    1 row(s) returned.
-    
-
-
-<table>
-<thead>
-<tr><th>table_catalog  </th><th>table_schema  </th><th>table_name  </th><th>table_type  </th><th>self_referencing_column_name  </th><th>reference_generation  </th><th>user_defined_type_catalog  </th><th>user_defined_type_schema  </th><th>user_defined_type_name  </th><th>is_insertable_into  </th><th>is_typed  </th><th>commit_action  </th></tr>
-</thead>
-<tbody>
-<tr><td>postgres       </td><td>public        </td><td>mytest1     </td><td>BASE TABLE  </td><td>                              </td><td>                      </td><td>                           </td><td>                          </td><td>                        </td><td>YES                 </td><td>NO        </td><td>               </td></tr>
+<tr><td>mytest1     </td><td>public        </td></tr>
+<tr><td>my_test     </td><td>public        </td></tr>
+<tr><td>commodity   </td><td>public        </td></tr>
 </tbody>
 </table>
 
@@ -252,12 +235,15 @@ SELECT column_name,column_default,is_nullable,data_type FROM information_schema.
 ALTER TABLE my_test RENAME TO mytest1
 ```
 
+    relation "mytest1" already exists
+    
+
 
 ```PostgreSQL
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'
 ```
 
-    1 row(s) returned.
+    3 row(s) returned.
     
 
 
@@ -267,6 +253,8 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'
 </thead>
 <tbody>
 <tr><td>mytest1     </td></tr>
+<tr><td>my_test     </td></tr>
+<tr><td>commodity   </td></tr>
 </tbody>
 </table>
 
@@ -301,7 +289,7 @@ SELECT column_name,column_default,is_nullable,data_type FROM information_schema.
 <tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type       </th></tr>
 </thead>
 <tbody>
-<tr><td>a            </td><td>&#x27;a&#x27;::text       </td><td>YES          </td><td>text            </td></tr>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text            </td></tr>
 <tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text            </td></tr>
 <tr><td>c            </td><td>                </td><td>YES          </td><td>double precision</td></tr>
 </tbody>
@@ -331,7 +319,7 @@ SELECT column_name,column_default,is_nullable,data_type FROM information_schema.
 <tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
 </thead>
 <tbody>
-<tr><td>a            </td><td>&#x27;a&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
 <tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
 <tr><td>c            </td><td>                </td><td>YES          </td><td>text       </td></tr>
 </tbody>
@@ -392,8 +380,8 @@ SELECT column_name,column_default,is_nullable,data_type FROM information_schema.
 <tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
 </thead>
 <tbody>
-<tr><td>a            </td><td>                </td><td>YES          </td><td>text       </td></tr>
-<tr><td>b            </td><td>                </td><td>YES          </td><td>text       </td></tr>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
 <tr><td>d            </td><td>                </td><td>YES          </td><td>text       </td></tr>
 </tbody>
 </table>
@@ -422,8 +410,8 @@ SELECT column_name,column_default,is_nullable,data_type FROM information_schema.
 <tr><th>column_name  </th><th>column_default  </th><th>is_nullable  </th><th>data_type  </th></tr>
 </thead>
 <tbody>
-<tr><td>a            </td><td>                </td><td>YES          </td><td>text       </td></tr>
-<tr><td>b            </td><td>                </td><td>YES          </td><td>text       </td></tr>
+<tr><td>a            </td><td>&#x27;abc&#x27;::text     </td><td>YES          </td><td>text       </td></tr>
+<tr><td>b            </td><td>&#x27;b&#x27;::text       </td><td>YES          </td><td>text       </td></tr>
 </tbody>
 </table>
 
@@ -475,12 +463,78 @@ pg中删除约束只能删除有名字的约束,使用语句
 ALTER TABLE <表名> DROP CONSTRAINT <约束名>
 ```
 
-### 索引
+## 索引
 
 索引通常和数据库管理系统的实现有关,本文不做具体介绍,这块会在讲postgresql的时候单独介绍,不过多数情况下可以使用语句
 ```sql
 CREATE INDEX <索引名> ON <表名> (<列名>[,...<列名>])
 ```
+
+## 注释
+
+我们可以在SQL语句中添加注释,当然也可以为表,字段等实体添加注释以方便维护,这在SQL语法中是没有规定的,因此各个数据库管理程序的实现是不一致的,pg中使用`COMMENT ON`语句来管理这种注释.
+
+> 创建表注释
+
+```sql
+COMMENT ON TABLE <表名> IS '<注释内容>';
+```
+
+> 创建列注释
+
+```sql
+COMMENT ON COLUMN <表名>.<列名> IS '<注释内容>';
+```
+> 删除注释
+
+删除注释实际上就是将上面的创建煮熟的注释内容部分填为`NULL`
+
+
+
+```PostgreSQL
+COMMENT ON TABLE mytest1 IS '测试表'
+```
+
+
+```PostgreSQL
+COMMENT ON COLUMN mytest1.a IS '测试字段'
+```
+
+> 查看字段注释
+
+pg中查看字段注释使用如下语句,我们以查看`mytest1`表的字段注释为例
+
+
+```PostgreSQL
+SELECT  
+a.attname as 字段名,  
+col_description(a.attrelid,a.attnum) as 注释,  
+concat_ws('',t.typname,SUBSTRING(format_type(a.atttypid,a.atttypmod) from '\(.*\)')) as 字段类型
+FROM  
+pg_class as c,  
+pg_attribute as a,  
+pg_type as t  
+WHERE  
+c.relname = 'mytest1'  
+and a.atttypid = t.oid  
+and a.attrelid = c.oid  
+and a.attnum>0;
+```
+
+    2 row(s) returned.
+    
+
+
+<table>
+<thead>
+<tr><th>字段名  </th><th>注释    </th><th>字段类型  </th></tr>
+</thead>
+<tbody>
+<tr><td>a       </td><td>测试字段</td><td>text      </td></tr>
+<tr><td>b       </td><td>        </td><td>text      </td></tr>
+</tbody>
+</table>
+
 
 > 删除表
 
