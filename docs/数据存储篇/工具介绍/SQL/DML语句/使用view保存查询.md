@@ -1,14 +1,17 @@
-# 关联子查询
+# 使用view保存查询
 
-复杂查询中另一个领域就是多表间建立关联以获取需要的数据.一种常见的作法就是使用关联子查询
 
-关联子查询是一种子查询,它的特点是必定会有一个`WHERE`条件是将两个表建立起联系的条件.即
+`VIEW`通常翻译位`视图`,它的作用是固化查询,从SQL的角度来看视图和表是相同的,两者的区别在于表中保存的是实际的数据而视图中保存的是查询.
 
-```SQL
-...
-WHERE <表1>.<列1>=<表2>.<列2>
-...
-```
+通常我们可以将常用的查询语句做成视图来使用.
+
+使用视图有如下优点:
+
+1. 不用真的存数据.视图本质上只是查询,因此不会有额外数据存储.
+2. 不用考虑数据同步的问题,视图是查询,因此数据永远是最新的,不会存在因为数据同步造成的不一致问题.
+3. 切换数据源方便,如果查询都是走的view,那么如果底层的数据源需要有变化换一张表只需要在view中修改`FROM`子句的内容即可,对外部使用是无感的
+
+基于这两点,许多数据库实践中会要求所有的交互层使用视图而不是直接读取表中结果.
 
 
 ```PostgreSQL
@@ -24,24 +27,7 @@ WHERE <表1>.<列1>=<表2>.<列2>
 
 ## 准备工作
 
-本文依然使用商品表来作为例子
-
-> 商品表
-
-商品名|品牌|颜色款式|商品种类|商品价格|进货价格|登记日期
----|---|---|---|---|---|---
-ATS001|A|黑白宽条纹款|T恤|59|30|2019-06-02 10:00:00
-ATS002|A|蓝白宽条纹款|T恤|79|40|2020-03-02 10:00:00
-ATSY001|A|蓝白宽条纹初音限定款|T恤|299|45|2020-04-02 10:00:00
-BTS001|B|黑白宽条纹款|T恤|59|30|2020-02-02 10:00:00
-BTS002|B|蓝白宽条纹款|T恤|79|40|2020-03-02 10:00:00
-BTSY001|B|纯白款|T恤|49|20|2020-04-02 10:00:00
-ASS000|A|黑色款|短裤|99|60|2020-03-05 10:00:00
-ASS001|A|米色款|短裤|99|60|2020-03-05 10:00:00
-ASSY001|A|米色底红色花纹超人限定款|短裤|599|140|2020-04-02 10:00:00
-BSS001|B|黑色款|短裤|89|50|2020-03-05 10:00:00
-BSS002|B|黑底白花款|短裤|96|60|2019-10-05 10:00:00
-BSS003|B|白底红花款|短裤|96|60|2020-03-05 10:00:00
+本文使用的样例表是一张商品表.
 
 
 ```PostgreSQL
@@ -210,22 +196,49 @@ SELECT * FROM Commodity
 </table>
 
 
-##  从例子开始
+## 视图的创建
 
-> 找出所有商品中售价高于同品牌同类型商品均价的商品
+创建视图需要使用CREATE VIEW语句:
+
+```SQL
+CREATE VIEW 视图名称(<视图列名1>, <视图列名2>, ……)
+AS
+<SELECT语句>
+```
+
+视图的创建也是有限制的,具体就是:
+
++ 不能使用`ORDER BY`语句排序结果
++ 只可对其进行有限制的更新,即只有满足:
+    1. `SELECT`子句中未使用`DISTINCT`
+    2. `FROM`子句中只有一张表
+    3. 未使用`GROUP BY`子句
+    4. 未使用`HAVING`子句
+
+可以认为,必须是没有聚合操作的视图才可以修改.
+> 构造一个查询短裤类商品的view
 
 
 ```PostgreSQL
-SELECT * FROM Commodity AS t1
-WHERE sale_price > (
-    SELECT AVG(sale_price)
-    FROM Commodity AS t2
-    WHERE t1.type = t2.type AND t1.brand = t2.brand
-    GROUP BY brand,type
+CREATE VIEW Short
+AS (
+SELECT * 
+    FROM Commodity
+    WHERE type='短裤'
 )
 ```
 
-    5 row(s) returned.
+## 视图的查询
+
+
+视图和表在查询上是一样的用法
+
+
+```PostgreSQL
+SELECT * FROM Short
+```
+
+    6 row(s) returned.
     
 
 
@@ -234,62 +247,27 @@ WHERE sale_price > (
 <tr><th style="text-align: right;">  id</th><th>name   </th><th>brand  </th><th>style                   </th><th>type  </th><th style="text-align: right;">  sale_price</th><th style="text-align: right;">  purchase_price</th><th>ctime                    </th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align: right;">   3</td><td>ATSY001</td><td>A      </td><td>蓝白宽条纹初音限定款    </td><td>T恤   </td><td style="text-align: right;">         299</td><td style="text-align: right;">              45</td><td>2020-04-02 10:00:00+00:00</td></tr>
-<tr><td style="text-align: right;">   5</td><td>BTS002 </td><td>B      </td><td>蓝白宽条纹款            </td><td>T恤   </td><td style="text-align: right;">          79</td><td style="text-align: right;">              40</td><td>2020-03-02 10:00:00+00:00</td></tr>
+<tr><td style="text-align: right;">   7</td><td>ASS000 </td><td>A      </td><td>黑色款                  </td><td>短裤  </td><td style="text-align: right;">          99</td><td style="text-align: right;">              60</td><td>2020-03-05 10:00:00+00:00</td></tr>
+<tr><td style="text-align: right;">   8</td><td>ASS001 </td><td>A      </td><td>米色款                  </td><td>短裤  </td><td style="text-align: right;">          99</td><td style="text-align: right;">              60</td><td>2020-03-05 10:00:00+00:00</td></tr>
 <tr><td style="text-align: right;">   9</td><td>ASSY001</td><td>A      </td><td>米色底红色花纹超人限定款</td><td>短裤  </td><td style="text-align: right;">         599</td><td style="text-align: right;">             140</td><td>2020-04-02 10:00:00+00:00</td></tr>
+<tr><td style="text-align: right;">  10</td><td>BSS001 </td><td>B      </td><td>黑色款                  </td><td>短裤  </td><td style="text-align: right;">          89</td><td style="text-align: right;">              50</td><td>2020-03-05 10:00:00+00:00</td></tr>
 <tr><td style="text-align: right;">  11</td><td>BSS002 </td><td>B      </td><td>黑底白花款              </td><td>短裤  </td><td style="text-align: right;">          96</td><td style="text-align: right;">              60</td><td>2019-10-05 10:00:00+00:00</td></tr>
 <tr><td style="text-align: right;">  12</td><td>BSS003 </td><td>B      </td><td>白底红花款              </td><td>短裤  </td><td style="text-align: right;">          96</td><td style="text-align: right;">              60</td><td>2020-03-05 10:00:00+00:00</td></tr>
 </tbody>
 </table>
 
 
-下面我们来仔细研究下这个查询.
+## 视图的删除
 
-+ 首先我们的需求是要获得满足条件的记录,因此这条查询一定是一条普通查询,在`WHERE`子句中做条件筛选.
-+ 然后我们我们需要可以知道不同品牌不同类型商品的均价,这就会用到聚合查询.
+删除视图需要使用`DROP VIEW`语句
 
 
 ```PostgreSQL
-SELECT AVG(sale_price)
-FROM Commodity
-GROUP BY brand,type
+DROP VIEW Short
 ```
-
-    4 row(s) returned.
-    
-
-
-<table>
-<thead>
-<tr><th style="text-align: right;">     avg</th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 62.3333</td></tr>
-<tr><td style="text-align: right;"> 93.6667</td></tr>
-<tr><td style="text-align: right;">265.667 </td></tr>
-<tr><td style="text-align: right;">145.667 </td></tr>
-</tbody>
-</table>
-
-
-我们希望每条数据可以和品牌,商品类型与之相同的均值数据进行比较,因此需要将这两个查询联系起来,这就是关联子查询的作用了.
-
-这里我们在子查询中加入了一行`WHERE`子句
-
-```SQL
-WHERE t1.type = t2.type AND t1.brand = t2.brand
-```
-
-其作用就是在这两个查询间建立需要的联系.需要注意
-
-1. 关联子查询需要关联多表,因此通常我们会用`AS 语句`给两个表建立一个别名以避免冲突.
-2. 建立关联的子句必须在子查询中,SQL和多数编程语言一样变量存在作用域,且作用域满足内部可以看到外部而外部看不到内部的特点.
 
 ## 收尾
 
-本文内容较短,但并不简单,关联子查询算是比较复杂的筛选方式了,本篇的重点是:
-
-+ 关联子查询中的关联条件需要在子查询内部因为作用域满足内部可以看到外部而外部看不到内部的特点
 
 
 ```PostgreSQL
