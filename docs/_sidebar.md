@@ -14,6 +14,7 @@
 * [数据生产篇](数据生产篇/README.md)
     * [埋点数据采集](数据生产篇/埋点数据采集.md)
     * [日志数据采集](数据生产篇/日志数据采集.md)
+    * [外部数据采集](数据生产篇/外部数据采集.md)
     * 工具介绍
         * [Elasticsearch](数据生产篇/埋点数据采集.md)
         * [Kibana](数据生产篇/埋点数据采集.md)
@@ -45,6 +46,7 @@
     * 关系数据存储
     * 半热数据存储
     * 冷数据存储
+    * 数据分层
     * 工具介绍
         * Redis
         * [postgresql](数据存储篇/工具介绍/postgresql/README.md)
@@ -58,6 +60,11 @@
                 * [自定义扩展](数据存储篇/工具介绍/postgresql/功能与特性/自定义扩展/README.md)
                     * [自定义数据类型](数据存储篇/工具介绍/postgresql/功能与特性/自定义扩展/自定义数据类型.md)
             * [使用场景](数据存储篇/工具介绍/postgresql/使用场景/README.md)
+        * hive
+        * hbase
+        * airflow
+        * kafka
+        * druid
 * 数据分析篇
     * 工具介绍
         * [SymPy](数据分析篇/工具介绍/SymPy/README.md)
@@ -84,8 +91,7 @@
             * [傅里叶变换](数据分析篇/工具介绍/numpy和scipy/傅里叶变换/傅里叶变换.md)
             * [窗口函数与卷积](数据分析篇/工具介绍/numpy和scipy/窗口函数与卷积/窗口函数与卷积.md)
             * [财务分析](数据分析篇/工具介绍/numpy和scipy/财务分析.md)
-* [数据挖掘篇](数据可视化篇/README.md)
-    * 工具介绍
+
 * [数据可视化篇](数据可视化篇/README.md)
     * 用于分析过程中的可视化
     * 用于展示结论的可视化
@@ -102,7 +108,18 @@
             * [动画](数据可视化篇/工具介绍/matplotlib/动画/动画.md)
             * [matplitlib结合web技术](数据可视化篇/工具介绍/matplotlib/matplitlib结合web技术.md)
             * [结语](数据可视化篇/工具介绍/matplotlib/结语.md)
-* 数据预测篇
+* [数据挖掘篇](数据可视化篇/README.md)
+    * 工具介绍
+        * [sklearn]()
+* [数据预测篇](数据可视化篇/README.md)
+    * 工具介绍
+        * [sklearn]()
+        * [tensorflow]()
+
+* [架构与部署篇](架构与部署篇)
+    * 容器技术
+    * [grpc]()
+    * [tensorflow serving]()
 * [术语表](术语表/README.md)
     * [统计](术语表/统计/README.md)
         * [误差](术语表/统计/误差.md)
