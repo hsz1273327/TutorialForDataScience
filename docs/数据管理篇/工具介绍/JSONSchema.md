@@ -3,16 +3,16 @@
 [JSONSchema](http://json-schema.org/)是用来定义JSON数据约束的一个标准.根据这个约定模式,交换数据的双方可以理解JSON数据的要求和约束,也可以据此对数据进行验证以保证数据交换的正确性.
 当然由于许多JSONSchema实现都附带可以校验用于生成JSON的对应结构体或者哈希表结构等,它事实上也可以用于做结构化数据校验.
 
-目前最新的JSONSchema版本是[Draft 8](http://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8),但多数编程语言的实现目前只支持到[draft-7](http://json-schema.org/specification-links.html#draft-7).
+目前最新的JSONSchema版本是[Draft 8](http://json-schema.org/specification-links.html#2019-09-formerly-known-as-draft-8),但多数编程语言的实现目前只支持到[draft-4](http://json-schema.org/specification-links.html#draft-4).第二多的则是支持到[draft-7](http://json-schema.org/specification-links.html#draft-7)
 
-本文将以draft-7为基准介绍JSONSchema.
+本文将以draft-4为基准介绍JSONSchema.
 
 ## 一个典型的JSONSchema例子
 
 ```json
 {
   "$id": "https://example.com/address.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An address similar to http://microformats.org/wiki/h-card",
   "type": "object",
   "properties": {
